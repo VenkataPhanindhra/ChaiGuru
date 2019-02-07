@@ -34,6 +34,9 @@ struct APIRequest {
         
         urlRequest.httpMethod = requestType
         
+        urlRequest.setValue("ASXCV@#$%", forHTTPHeaderField: "Auth-Token")
+        urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
         var postData = Data()
         
         do{

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ChaiGuru/APIRequest.swift"
+            timestampString = "571214314.461154"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "callApiRequestResponse(methodName:postString:postInputStream:requestType:SuccessResponse:failureResponse:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ChaiGuru/APIRequest.swift"
+            timestampString = "571214314.461197"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
+            landmarkName = "callApiRequestResponse(methodName:postString:postInputStream:requestType:SuccessResponse:failureResponse:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ChaiGuru/APIRequest.swift"
+            timestampString = "571214314.461237"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
+            landmarkName = "callApiRequestResponse(methodName:postString:postInputStream:requestType:SuccessResponse:failureResponse:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ChaiGuru/APIRequest.swift"
+            timestampString = "571214314.461277"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "63"
+            endingLineNumber = "63"
+            landmarkName = "callApiRequestResponse(methodName:postString:postInputStream:requestType:SuccessResponse:failureResponse:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ChaiGuru.APIRequest.callApiRequestResponse(methodName: Swift.String, postString: Swift.String, postInputStream: Swift.AnyObject, requestType: Swift.String, SuccessResponse: (Swift.AnyObject) -&gt; (), failureResponse: (Swift.Int) -&gt; ()) -&gt; ()"
+                  moduleName = "ChaiGuru"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/smscmacmini2/Desktop/ChaiGuru/ChaiGuru/APIRequest.swift"
+                  timestampString = "571214314.70619"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "63"
+                  endingLineNumber = "63"
+                  offsetFromSymbolStart = "1268">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in ChaiGuru.APIRequest.callApiRequestResponse(methodName: Swift.String, postString: Swift.String, postInputStream: Swift.AnyObject, requestType: Swift.String, SuccessResponse: (Swift.AnyObject) -&gt; (), failureResponse: (Swift.Int) -&gt; ()) -&gt; ()"
+                  moduleName = "ChaiGuru"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/smscmacmini2/Desktop/ChaiGuru/ChaiGuru/APIRequest.swift"
+                  timestampString = "571214314.707809"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "66"
+                  endingLineNumber = "66"
+                  offsetFromSymbolStart = "72">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

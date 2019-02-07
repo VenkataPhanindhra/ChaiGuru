@@ -30,6 +30,8 @@
 		1AE20BBB220B5C0200B6897D /* UserDefaultStored.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE20BBA220B5C0200B6897D /* UserDefaultStored.swift */; };
 		1AE20BBD220B61CC00B6897D /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE20BBC220B61CC00B6897D /* APIRequest.swift */; };
 		1AE20BBF220B64DA00B6897D /* ConstantsFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE20BBE220B64DA00B6897D /* ConstantsFile.swift */; };
+		2BA6A587AEC66276053E46F0 /* Pods_ChaiGuru.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93FDF2E3037D7B4AFD6F1F5F /* Pods_ChaiGuru.framework */; };
+		7D13C7F9220C0C840087E6E5 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D13C7F8220C0C840087E6E5 /* Reachability.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +60,10 @@
 		1AE20BBA220B5C0200B6897D /* UserDefaultStored.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultStored.swift; sourceTree = "<group>"; };
 		1AE20BBC220B61CC00B6897D /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
 		1AE20BBE220B64DA00B6897D /* ConstantsFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantsFile.swift; sourceTree = "<group>"; };
+		2036F66EE3101C4A2A876145 /* Pods-ChaiGuru.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChaiGuru.release.xcconfig"; path = "Pods/Target Support Files/Pods-ChaiGuru/Pods-ChaiGuru.release.xcconfig"; sourceTree = "<group>"; };
+		7D13C7F8220C0C840087E6E5 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		93FDF2E3037D7B4AFD6F1F5F /* Pods_ChaiGuru.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChaiGuru.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C16EC7E94A13F3ECF968D94B /* Pods-ChaiGuru.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChaiGuru.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ChaiGuru/Pods-ChaiGuru.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2BA6A587AEC66276053E46F0 /* Pods_ChaiGuru.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,6 +95,8 @@
 			children = (
 				1AE20B90220B453600B6897D /* ChaiGuru */,
 				1AE20B8F220B453600B6897D /* Products */,
+				D13FA53DCAEF5E5B2AD28A5C /* Pods */,
+				7F7140096F967CEAF779115D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -146,8 +155,26 @@
 				1AE20BB7220B4E5F00B6897D /* RoundedCornersExtensionFile.swift */,
 				1AE20BBA220B5C0200B6897D /* UserDefaultStored.swift */,
 				1AE20BBE220B64DA00B6897D /* ConstantsFile.swift */,
+				7D13C7F8220C0C840087E6E5 /* Reachability.swift */,
 			);
 			path = SupportedFiles;
+			sourceTree = "<group>";
+		};
+		7F7140096F967CEAF779115D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				93FDF2E3037D7B4AFD6F1F5F /* Pods_ChaiGuru.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D13FA53DCAEF5E5B2AD28A5C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C16EC7E94A13F3ECF968D94B /* Pods-ChaiGuru.debug.xcconfig */,
+				2036F66EE3101C4A2A876145 /* Pods-ChaiGuru.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -157,9 +184,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1AE20BA0220B453700B6897D /* Build configuration list for PBXNativeTarget "ChaiGuru" */;
 			buildPhases = (
+				E7095885A638BC3CD2F588DC /* [CP] Check Pods Manifest.lock */,
 				1AE20B8A220B453500B6897D /* Sources */,
 				1AE20B8B220B453500B6897D /* Frameworks */,
 				1AE20B8C220B453500B6897D /* Resources */,
+				EF937ACC43D9C0BFFF32C067 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -222,6 +251,47 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		E7095885A638BC3CD2F588DC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ChaiGuru-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EF937ACC43D9C0BFFF32C067 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ChaiGuru/Pods-ChaiGuru-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/MaterialTextField/MaterialTextField.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MaterialTextField.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ChaiGuru/Pods-ChaiGuru-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		1AE20B8A220B453500B6897D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -235,6 +305,7 @@
 				1ADC7EEF220BC99800CD3ACD /* HomeViewController.swift in Sources */,
 				1AE20B94220B453600B6897D /* ViewController.swift in Sources */,
 				1ADC7EF1220BC9B700CD3ACD /* CartViewController.swift in Sources */,
+				7D13C7F9220C0C840087E6E5 /* Reachability.swift in Sources */,
 				1ADC7EF4220BCA8000CD3ACD /* ChaiGuruTabBarViewController.swift in Sources */,
 				1AE20B92220B453600B6897D /* AppDelegate.swift in Sources */,
 				1AE20BBD220B61CC00B6897D /* APIRequest.swift in Sources */,
@@ -384,17 +455,20 @@
 		};
 		1AE20BA1220B453700B6897D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C16EC7E94A13F3ECF968D94B /* Pods-ChaiGuru.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 9KFRHG4MU5;
 				INFOPLIST_FILE = ChaiGuru/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "phanindhra-bandaru.ChaiGuru";
+				PRODUCT_BUNDLE_IDENTIFIER = com.voipSample.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = VOIP_Sample_Development_Jan_23_2019;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -402,17 +476,20 @@
 		};
 		1AE20BA2220B453700B6897D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2036F66EE3101C4A2A876145 /* Pods-ChaiGuru.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 9KFRHG4MU5;
 				INFOPLIST_FILE = ChaiGuru/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "phanindhra-bandaru.ChaiGuru";
+				PRODUCT_BUNDLE_IDENTIFIER = com.voipSample.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = VOIP_Sample_Development_Jan_23_2019;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

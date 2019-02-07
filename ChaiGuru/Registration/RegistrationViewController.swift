@@ -33,13 +33,37 @@ class RegistrationViewController: UIViewController {
         
         //NEED TO WRITE API REQUEST
         
-        let Tabbar = self.storyboard?.instantiateViewController(withIdentifier: "ChaiGuruTabBarViewController") as! ChaiGuruTabBarViewController
+//        let Tabbar = self.storyboard?.instantiateViewController(withIdentifier: "ChaiGuruTabBarViewController") as! ChaiGuruTabBarViewController
+//
+//        Tabbar.selectedIndex = 0
+//
+//        UserDefaultStored.isLoggedIn = "1"
+//
+//        self.navigationController?.pushViewController(Tabbar, animated: true)
         
-        Tabbar.selectedIndex = 0
+        //3.1.5.235/api/api_v1.0.php/user_registration
         
-        UserDefaultStored.isLoggedIn = "1"
+//        //{"first_name":"Nihkil",
+//        "last_name":"",
+//        "email":"nikhiltest@gmail.com",
+//        "password":"test@123"}
         
-        self.navigationController?.pushViewController(Tabbar, animated: true)
+        let dict = ["first_name" : "12345","last_name":"","email":"12345@gmail.com","password":"test@123"]
+        
+        
+        
+        APIRequest.shareDInstance.callApiRequestResponse(methodName: ChaiguruConstants.APINames.user_registration, postString: "", postInputStream: dict as AnyObject, requestType: ChaiguruConstants.HTTP_Request_Post, SuccessResponse: { (dataResponse) in
+            
+            print(dataResponse)
+            
+            
+        }) { (statusCode) in
+            
+            print(statusCode)
+            
+        }
+        
+        
         
     }
     
