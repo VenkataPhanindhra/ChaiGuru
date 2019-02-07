@@ -22,6 +22,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             UserDefaultStored.userId = ""
         }
         
+        if UserDefaultStored.isLoggedIn == nil{
+            UserDefaultStored.isLoggedIn = "0"
+        }
+        
+        
         
         
         return true
@@ -36,10 +41,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window = UIWindow(frame: UIScreen.main.bounds)
         
         let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let navigationController :UINavigationController!
         
-        let initialViewController = storyboard.instantiateViewController(withIdentifier: "AboutViewController") as! AboutViewController
+        //Testing
+        UserDefaultStored.isLoggedIn = "0"
         
-        let navigationController :UINavigationController = UINavigationController.init(rootViewController: initialViewController)
+        
+        if UserDefaultStored.isLoggedIn == "1"{
+            
+           let initialViewController = storyboard.instantiateViewController(withIdentifier: "ChaiGuruTabBarViewController") as! ChaiGuruTabBarViewController
+            
+            initialViewController.selectedIndex = 0
+            
+            navigationController  = UINavigationController.init(rootViewController: initialViewController)
+            
+        }else{
+            
+           let initialViewController = storyboard.instantiateViewController(withIdentifier: "AboutViewController") as! AboutViewController
+            
+            navigationController  = UINavigationController.init(rootViewController: initialViewController)
+        }
+        
+        
         
         navigationController.isNavigationBarHidden = true
         

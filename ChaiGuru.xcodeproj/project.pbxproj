@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1ADC7EEF220BC99800CD3ACD /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ADC7EEE220BC99800CD3ACD /* HomeViewController.swift */; };
+		1ADC7EF1220BC9B700CD3ACD /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ADC7EF0220BC9B700CD3ACD /* CartViewController.swift */; };
+		1ADC7EF4220BCA8000CD3ACD /* ChaiGuruTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ADC7EF3220BCA8000CD3ACD /* ChaiGuruTabBarViewController.swift */; };
+		1ADC7EF6220BCAFC00CD3ACD /* AllViewProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ADC7EF5220BCAFC00CD3ACD /* AllViewProductsViewController.swift */; };
+		1ADC7EF8220BCB1000CD3ACD /* ChaiGuruDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ADC7EF7220BCB1000CD3ACD /* ChaiGuruDetailsViewController.swift */; };
 		1AE20B92220B453600B6897D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE20B91220B453600B6897D /* AppDelegate.swift */; };
 		1AE20B94220B453600B6897D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE20B93220B453600B6897D /* ViewController.swift */; };
 		1AE20B97220B453600B6897D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AE20B95220B453600B6897D /* Main.storyboard */; };
@@ -28,6 +33,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1ADC7EEE220BC99800CD3ACD /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		1ADC7EF0220BC9B700CD3ACD /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
+		1ADC7EF3220BCA8000CD3ACD /* ChaiGuruTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChaiGuruTabBarViewController.swift; sourceTree = "<group>"; };
+		1ADC7EF5220BCAFC00CD3ACD /* AllViewProductsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllViewProductsViewController.swift; sourceTree = "<group>"; };
+		1ADC7EF7220BCB1000CD3ACD /* ChaiGuruDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChaiGuruDetailsViewController.swift; sourceTree = "<group>"; };
 		1AE20B8E220B453600B6897D /* ChaiGuru.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChaiGuru.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AE20B91220B453600B6897D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1AE20B93220B453600B6897D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -61,6 +71,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1ADC7EF2220BC9BE00CD3ACD /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				1ADC7EF3220BCA8000CD3ACD /* ChaiGuruTabBarViewController.swift */,
+				1ADC7EEE220BC99800CD3ACD /* HomeViewController.swift */,
+				1ADC7EF5220BCAFC00CD3ACD /* AllViewProductsViewController.swift */,
+				1ADC7EF7220BCB1000CD3ACD /* ChaiGuruDetailsViewController.swift */,
+				1ADC7EF0220BC9B700CD3ACD /* CartViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
 		1AE20B85220B453500B6897D = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +105,7 @@
 				1AE20B91220B453600B6897D /* AppDelegate.swift */,
 				1AE20B93220B453600B6897D /* ViewController.swift */,
 				1AE20BBC220B61CC00B6897D /* APIRequest.swift */,
+				1ADC7EF2220BC9BE00CD3ACD /* ViewControllers */,
 				1AE20BB9220B5BD000B6897D /* SupportedFiles */,
 				1AE20BB6220B4C3C00B6897D /* Registration */,
 				1AE20B95220B453600B6897D /* Main.storyboard */,
@@ -209,10 +232,15 @@
 				1AE20BA4220B46DC00B6897D /* AboutViewController.swift in Sources */,
 				1AE20BBB220B5C0200B6897D /* UserDefaultStored.swift in Sources */,
 				1AE20BB8220B4E5F00B6897D /* RoundedCornersExtensionFile.swift in Sources */,
+				1ADC7EEF220BC99800CD3ACD /* HomeViewController.swift in Sources */,
 				1AE20B94220B453600B6897D /* ViewController.swift in Sources */,
+				1ADC7EF1220BC9B700CD3ACD /* CartViewController.swift in Sources */,
+				1ADC7EF4220BCA8000CD3ACD /* ChaiGuruTabBarViewController.swift in Sources */,
 				1AE20B92220B453600B6897D /* AppDelegate.swift in Sources */,
 				1AE20BBD220B61CC00B6897D /* APIRequest.swift in Sources */,
+				1ADC7EF8220BCB1000CD3ACD /* ChaiGuruDetailsViewController.swift in Sources */,
 				1AE20BA8220B46F900B6897D /* RegistrationViewController.swift in Sources */,
+				1ADC7EF6220BCAFC00CD3ACD /* AllViewProductsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

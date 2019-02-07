@@ -23,8 +23,15 @@ class LoginViewController: UIViewController {
 
     @IBAction func loginBtnCliked(_ sender : Any){
         
+        //NEED TO WRITE API REQUEST
         
+        let Tabbar = self.storyboard?.instantiateViewController(withIdentifier: "ChaiGuruTabBarViewController") as! ChaiGuruTabBarViewController
         
+        Tabbar.selectedIndex = 0
+        
+        UserDefaultStored.isLoggedIn = "1"
+        
+        self.navigationController?.pushViewController(Tabbar, animated: true)
         
         
     }
@@ -32,12 +39,15 @@ class LoginViewController: UIViewController {
     @IBAction func forgotBtnCliked(_ sender : Any){
         
         
+        
     }
     
     
     @IBAction func registrationBtnClicked(_ sender : Any){
         
+        let registration = self.storyboard?.instantiateViewController(withIdentifier: "RegistrationViewController") as! RegistrationViewController
         
+        self.navigationController?.pushViewController(registration, animated: true)
     }
     
     

@@ -30,6 +30,21 @@ class UserDefaultStored : NSObject{
 //        
 //    }
     
+    class var isLoggedIn: String! {
+        
+        get{
+            if let did = UserDefaults.standard.object(forKey: "isLoggedIn") {
+                return (did as! String)
+            }
+            return nil
+        }
+        set(newVal){
+            UserDefaults.standard.set(newVal, forKey: "isLoggedIn")
+        }
+        
+    }
+    
+    
     class var userId: String! {
 
         get{
@@ -45,6 +60,8 @@ class UserDefaultStored : NSObject{
     }
     
   
+    
+    
     class var Name: String! {
         
         get{
