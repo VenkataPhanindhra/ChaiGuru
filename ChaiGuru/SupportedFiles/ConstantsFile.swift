@@ -18,6 +18,7 @@ class ChaiguruConstants {
     struct APINames {
         
         static let user_registration = "user_registration"
+        static let user_login = "user_login"
         
     }
     

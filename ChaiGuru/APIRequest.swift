@@ -27,6 +27,8 @@ struct APIRequest {
             return
         }
         
+       
+        
         let urlSessionConfig = URLSessionConfiguration.default
         let urlSession  = URLSession.init(configuration: urlSessionConfig)
         
