@@ -1,0 +1,417 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1AE20B92220B453600B6897D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE20B91220B453600B6897D /* AppDelegate.swift */; };
+		1AE20B94220B453600B6897D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE20B93220B453600B6897D /* ViewController.swift */; };
+		1AE20B97220B453600B6897D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AE20B95220B453600B6897D /* Main.storyboard */; };
+		1AE20B99220B453700B6897D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1AE20B98220B453700B6897D /* Assets.xcassets */; };
+		1AE20B9C220B453700B6897D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AE20B9A220B453700B6897D /* LaunchScreen.storyboard */; };
+		1AE20BA4220B46DC00B6897D /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE20BA3220B46DC00B6897D /* AboutViewController.swift */; };
+		1AE20BA6220B46EC00B6897D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE20BA5220B46EC00B6897D /* LoginViewController.swift */; };
+		1AE20BA8220B46F900B6897D /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE20BA7220B46F900B6897D /* RegistrationViewController.swift */; };
+		1AE20BAA220B4AB900B6897D /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1AE20BA9220B4AB900B6897D /* Montserrat-Bold.ttf */; };
+		1AE20BAC220B4AC700B6897D /* Montserrat-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1AE20BAB220B4AC700B6897D /* Montserrat-ExtraBold.ttf */; };
+		1AE20BAE220B4ADA00B6897D /* Montserrat-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1AE20BAD220B4ADA00B6897D /* Montserrat-Light.ttf */; };
+		1AE20BB0220B4AE500B6897D /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1AE20BAF220B4AE500B6897D /* Montserrat-Medium.ttf */; };
+		1AE20BB2220B4AF200B6897D /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1AE20BB1220B4AF200B6897D /* Montserrat-Regular.ttf */; };
+		1AE20BB4220B4AFC00B6897D /* Montserrat-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1AE20BB3220B4AFC00B6897D /* Montserrat-SemiBold.ttf */; };
+		1AE20BB8220B4E5F00B6897D /* RoundedCornersExtensionFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE20BB7220B4E5F00B6897D /* RoundedCornersExtensionFile.swift */; };
+		1AE20BBB220B5C0200B6897D /* UserDefaultStored.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE20BBA220B5C0200B6897D /* UserDefaultStored.swift */; };
+		1AE20BBD220B61CC00B6897D /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE20BBC220B61CC00B6897D /* APIRequest.swift */; };
+		1AE20BBF220B64DA00B6897D /* ConstantsFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE20BBE220B64DA00B6897D /* ConstantsFile.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1AE20B8E220B453600B6897D /* ChaiGuru.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChaiGuru.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1AE20B91220B453600B6897D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		1AE20B93220B453600B6897D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		1AE20B96220B453600B6897D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		1AE20B98220B453700B6897D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1AE20B9B220B453700B6897D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		1AE20B9D220B453700B6897D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1AE20BA3220B46DC00B6897D /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		1AE20BA5220B46EC00B6897D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		1AE20BA7220B46F900B6897D /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
+		1AE20BA9220B4AB900B6897D /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
+		1AE20BAB220B4AC700B6897D /* Montserrat-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ExtraBold.ttf"; sourceTree = "<group>"; };
+		1AE20BAD220B4ADA00B6897D /* Montserrat-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Light.ttf"; sourceTree = "<group>"; };
+		1AE20BAF220B4AE500B6897D /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Medium.ttf"; sourceTree = "<group>"; };
+		1AE20BB1220B4AF200B6897D /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
+		1AE20BB3220B4AFC00B6897D /* Montserrat-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBold.ttf"; sourceTree = "<group>"; };
+		1AE20BB7220B4E5F00B6897D /* RoundedCornersExtensionFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCornersExtensionFile.swift; sourceTree = "<group>"; };
+		1AE20BBA220B5C0200B6897D /* UserDefaultStored.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultStored.swift; sourceTree = "<group>"; };
+		1AE20BBC220B61CC00B6897D /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
+		1AE20BBE220B64DA00B6897D /* ConstantsFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantsFile.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1AE20B8B220B453500B6897D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1AE20B85220B453500B6897D = {
+			isa = PBXGroup;
+			children = (
+				1AE20B90220B453600B6897D /* ChaiGuru */,
+				1AE20B8F220B453600B6897D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1AE20B8F220B453600B6897D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1AE20B8E220B453600B6897D /* ChaiGuru.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1AE20B90220B453600B6897D /* ChaiGuru */ = {
+			isa = PBXGroup;
+			children = (
+				1AE20B91220B453600B6897D /* AppDelegate.swift */,
+				1AE20B93220B453600B6897D /* ViewController.swift */,
+				1AE20BBC220B61CC00B6897D /* APIRequest.swift */,
+				1AE20BB9220B5BD000B6897D /* SupportedFiles */,
+				1AE20BB6220B4C3C00B6897D /* Registration */,
+				1AE20B95220B453600B6897D /* Main.storyboard */,
+				1AE20BB5220B4B0E00B6897D /* Fonts */,
+				1AE20B98220B453700B6897D /* Assets.xcassets */,
+				1AE20B9A220B453700B6897D /* LaunchScreen.storyboard */,
+				1AE20B9D220B453700B6897D /* Info.plist */,
+			);
+			path = ChaiGuru;
+			sourceTree = "<group>";
+		};
+		1AE20BB5220B4B0E00B6897D /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				1AE20BA9220B4AB900B6897D /* Montserrat-Bold.ttf */,
+				1AE20BAD220B4ADA00B6897D /* Montserrat-Light.ttf */,
+				1AE20BB3220B4AFC00B6897D /* Montserrat-SemiBold.ttf */,
+				1AE20BAF220B4AE500B6897D /* Montserrat-Medium.ttf */,
+				1AE20BAB220B4AC700B6897D /* Montserrat-ExtraBold.ttf */,
+				1AE20BB1220B4AF200B6897D /* Montserrat-Regular.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		1AE20BB6220B4C3C00B6897D /* Registration */ = {
+			isa = PBXGroup;
+			children = (
+				1AE20BA3220B46DC00B6897D /* AboutViewController.swift */,
+				1AE20BA5220B46EC00B6897D /* LoginViewController.swift */,
+				1AE20BA7220B46F900B6897D /* RegistrationViewController.swift */,
+			);
+			path = Registration;
+			sourceTree = "<group>";
+		};
+		1AE20BB9220B5BD000B6897D /* SupportedFiles */ = {
+			isa = PBXGroup;
+			children = (
+				1AE20BB7220B4E5F00B6897D /* RoundedCornersExtensionFile.swift */,
+				1AE20BBA220B5C0200B6897D /* UserDefaultStored.swift */,
+				1AE20BBE220B64DA00B6897D /* ConstantsFile.swift */,
+			);
+			path = SupportedFiles;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1AE20B8D220B453500B6897D /* ChaiGuru */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1AE20BA0220B453700B6897D /* Build configuration list for PBXNativeTarget "ChaiGuru" */;
+			buildPhases = (
+				1AE20B8A220B453500B6897D /* Sources */,
+				1AE20B8B220B453500B6897D /* Frameworks */,
+				1AE20B8C220B453500B6897D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ChaiGuru;
+			productName = ChaiGuru;
+			productReference = 1AE20B8E220B453600B6897D /* ChaiGuru.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1AE20B86220B453500B6897D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1010;
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = phanindhra;
+				TargetAttributes = {
+					1AE20B8D220B453500B6897D = {
+						CreatedOnToolsVersion = 10.1;
+					};
+				};
+			};
+			buildConfigurationList = 1AE20B89220B453500B6897D /* Build configuration list for PBXProject "ChaiGuru" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1AE20B85220B453500B6897D;
+			productRefGroup = 1AE20B8F220B453600B6897D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1AE20B8D220B453500B6897D /* ChaiGuru */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1AE20B8C220B453500B6897D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1AE20BB2220B4AF200B6897D /* Montserrat-Regular.ttf in Resources */,
+				1AE20BAE220B4ADA00B6897D /* Montserrat-Light.ttf in Resources */,
+				1AE20BAC220B4AC700B6897D /* Montserrat-ExtraBold.ttf in Resources */,
+				1AE20BAA220B4AB900B6897D /* Montserrat-Bold.ttf in Resources */,
+				1AE20BB0220B4AE500B6897D /* Montserrat-Medium.ttf in Resources */,
+				1AE20B9C220B453700B6897D /* LaunchScreen.storyboard in Resources */,
+				1AE20BB4220B4AFC00B6897D /* Montserrat-SemiBold.ttf in Resources */,
+				1AE20B99220B453700B6897D /* Assets.xcassets in Resources */,
+				1AE20B97220B453600B6897D /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1AE20B8A220B453500B6897D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1AE20BBF220B64DA00B6897D /* ConstantsFile.swift in Sources */,
+				1AE20BA6220B46EC00B6897D /* LoginViewController.swift in Sources */,
+				1AE20BA4220B46DC00B6897D /* AboutViewController.swift in Sources */,
+				1AE20BBB220B5C0200B6897D /* UserDefaultStored.swift in Sources */,
+				1AE20BB8220B4E5F00B6897D /* RoundedCornersExtensionFile.swift in Sources */,
+				1AE20B94220B453600B6897D /* ViewController.swift in Sources */,
+				1AE20B92220B453600B6897D /* AppDelegate.swift in Sources */,
+				1AE20BBD220B61CC00B6897D /* APIRequest.swift in Sources */,
+				1AE20BA8220B46F900B6897D /* RegistrationViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		1AE20B95220B453600B6897D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1AE20B96220B453600B6897D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		1AE20B9A220B453700B6897D /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1AE20B9B220B453700B6897D /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1AE20B9E220B453700B6897D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		1AE20B9F220B453700B6897D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1AE20BA1220B453700B6897D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9KFRHG4MU5;
+				INFOPLIST_FILE = ChaiGuru/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "phanindhra-bandaru.ChaiGuru";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1AE20BA2220B453700B6897D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9KFRHG4MU5;
+				INFOPLIST_FILE = ChaiGuru/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "phanindhra-bandaru.ChaiGuru";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1AE20B89220B453500B6897D /* Build configuration list for PBXProject "ChaiGuru" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1AE20B9E220B453700B6897D /* Debug */,
+				1AE20B9F220B453700B6897D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1AE20BA0220B453700B6897D /* Build configuration list for PBXNativeTarget "ChaiGuru" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1AE20BA1220B453700B6897D /* Debug */,
+				1AE20BA2220B453700B6897D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1AE20B86220B453500B6897D /* Project object */;
+}
