@@ -10,6 +10,8 @@ import UIKit
 
 class AllViewProductsViewController: UIViewController {
 
+    @IBOutlet weak var allProductsCollectionview : UICollectionView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -27,4 +29,28 @@ class AllViewProductsViewController: UIViewController {
     }
     */
 
+}
+
+extension AllViewProductsViewController : UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 10
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TypesOfProductCollectionViewCell", for: indexPath) as! TypesOfProductCollectionViewCell
+        
+        return cell
+        
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        return CGSize(width: collectionView.frame.size.width/2 - 10,height : 190)
+        
+    }
+    
+    
+    
 }

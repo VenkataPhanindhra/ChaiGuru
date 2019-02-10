@@ -77,7 +77,7 @@ extension HomeViewController : UITableViewDelegate,UITableViewDataSource{
        
         let viewHeader = tableView.dequeueReusableCell(withIdentifier: "TypeOfProductNameTableViewCell") as! TypeOfProductNameTableViewCell
         
-        
+        viewHeader.btnOfViewAll.addTarget(self, action: #selector(viewAllBtnTapped(_:)), for: .touchUpInside)
         
         
         return viewHeader
@@ -87,5 +87,15 @@ extension HomeViewController : UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 60
     }
+    
+    @objc func viewAllBtnTapped(_ sender : Any){
+        
+        
+        let viewAllVC = self.storyboard?.instantiateViewController(withIdentifier: "AllViewProductsViewController") as! AllViewProductsViewController
+        
+        
+        self.navigationController?.pushViewController(viewAllVC, animated: true)
+    }
+    
     
 }

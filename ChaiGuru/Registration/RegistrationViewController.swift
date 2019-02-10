@@ -228,7 +228,7 @@ class RegistrationViewController: UIViewController,UITextFieldDelegate {
                     let Tabbar = self.storyboard?.instantiateViewController(withIdentifier: "ChaiGuruTabBarViewController") as! ChaiGuruTabBarViewController
                     
                     let navigationContr = UINavigationController.init(rootViewController: Tabbar)
-                    
+                    navigationContr.isNavigationBarHidden = true
                     Tabbar.selectedIndex = 0
                     
                     UserDefaultStored.isLoggedIn = "1"
@@ -271,6 +271,7 @@ class RegistrationViewController: UIViewController,UITextFieldDelegate {
     //MARK:- TEXTFIELD DELEGATES
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
         return true
     }
     
