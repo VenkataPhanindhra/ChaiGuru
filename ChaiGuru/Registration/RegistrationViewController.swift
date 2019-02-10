@@ -198,9 +198,13 @@ class RegistrationViewController: UIViewController,UITextFieldDelegate {
                     "email":tfOfEmail.text!,
                     "password":tfOfPassword.text!]
         
-        
+        APIRequest.shareDInstance.MBProgress(view: self.view, message: "Loading...")
         
         APIRequest.shareDInstance.callApiRequestResponse(methodName: ChaiguruConstants.APINames.user_registration, postString: "", postInputStream: dict as AnyObject, requestType: ChaiguruConstants.HTTP_Request_Post, SuccessResponse: { (dataResponse) in
+            
+            DispatchQueue.main.async {
+                APIRequest.shareDInstance.hideProgreesHUD()
+            }
             
             
             let dicOfResp = dataResponse as! NSDictionary
@@ -248,6 +252,10 @@ class RegistrationViewController: UIViewController,UITextFieldDelegate {
         }) { (statusCode) in
             
             print(statusCode)
+            DispatchQueue.main.async {
+                APIRequest.shareDInstance.hideProgreesHUD()
+            }
+            
             
              _ = SweetAlert().showAlert("Something went wrong")
         }

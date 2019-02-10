@@ -12,6 +12,9 @@ class TypesOfProductItemsTableViewCell: UITableViewCell {
 
     @IBOutlet weak var productItemsCollectionView : UICollectionView!
     
+    var isCheckBtnAdd = false
+    
+    var indexpathObj = IndexPath()
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -23,11 +26,23 @@ class TypesOfProductItemsTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    
+    func getDataFromHomeScreen(indexpath : IndexPath){
+        
+        print("CellStyle",indexpath)
+        
+    }
+    
+    
 
 }
 
 
 extension TypesOfProductItemsTableViewCell : UICollectionViewDataSource,UICollectionViewDelegate{
+    
+    
+    
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 4
@@ -37,6 +52,29 @@ extension TypesOfProductItemsTableViewCell : UICollectionViewDataSource,UICollec
         
         let collectionCell = collectionView.dequeueReusableCell(withReuseIdentifier: "TypesOfProductCollectionViewCell", for: indexPath) as! TypesOfProductCollectionViewCell
         
+       
+        
+        collectionCell.btnOfAdd.addTarget(self, action: #selector(btnOfAdd(_:)), for: .touchUpInside)
+        
+        collectionCell.btnOfAdd.tag = indexPath.row
+        
+      
+        if isCheckBtnAdd == false{
+            
+           
+            
+            collectionCell.viewOfAdd.isHidden = false
+            collectionCell.viewOfPlusandMinus.isHidden = true
+            
+            
+        }else{
+            
+            isCheckBtnAdd = false
+         
+            collectionCell.viewOfAdd.isHidden = true
+            collectionCell.viewOfPlusandMinus.isHidden = false
+            
+        }
         
         
         
@@ -44,6 +82,23 @@ extension TypesOfProductItemsTableViewCell : UICollectionViewDataSource,UICollec
     }
     
     
+    @objc func btnOfAdd(_ sender : Any){
+        
+        print("collection",sender)
+        
+        indexpathObj.row = (sender as AnyObject).tag
+        
+       isCheckBtnAdd = true
+        
+        productItemsCollectionView.reloadData()
+        
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+//        print("collection",indexPath)
+        
+    }
     
     
     

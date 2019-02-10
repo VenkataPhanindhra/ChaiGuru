@@ -63,6 +63,8 @@ extension HomeViewController : UITableViewDelegate,UITableViewDataSource{
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "TypesOfProductItemsTableViewCell", for: indexPath) as! TypesOfProductItemsTableViewCell
         
+        cell.getDataFromHomeScreen(indexpath: indexPath)
+        
         cell.productItemsCollectionView.reloadData()
         
         
@@ -97,5 +99,8 @@ extension HomeViewController : UITableViewDelegate,UITableViewDataSource{
         self.navigationController?.pushViewController(viewAllVC, animated: true)
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("tableview", indexPath)
+    }
     
 }

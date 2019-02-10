@@ -178,10 +178,17 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
         
         let postDict = ["email":tfOfEmail.text!,"password":tfOfPassword.text!]
         
+        APIRequest.shareDInstance.MBProgress(view: self.view, message: "Loading...")
         
         APIRequest.shareDInstance.callApiRequestResponse(methodName: ChaiguruConstants.APINames.user_login, postString: "", postInputStream: postDict as AnyObject, requestType: ChaiguruConstants.HTTP_Request_Post, SuccessResponse: { (dataResponse) in
             
             let dicOfResp = dataResponse as! NSDictionary
+            
+            DispatchQueue.main.async {
+                APIRequest.shareDInstance.hideProgreesHUD()
+            }
+            
+            
             
             if dicOfResp.chaiGuruObject(forKey: "status") == "Failed"{
                 
@@ -227,7 +234,9 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
         }) { (statusCode) in
             
             print(statusCode)
-          
+            DispatchQueue.main.async {
+                APIRequest.shareDInstance.hideProgreesHUD()
+            }
             _ = SweetAlert().showAlert("Something went wrong")
             
         }

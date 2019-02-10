@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A4A5A24221094D90034437A /* SingletonClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4A5A23221094D90034437A /* SingletonClass.swift */; };
 		1A9723BC220C957B00D531B1 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9723BB220C957B00D531B1 /* Extension.swift */; };
 		1A9723BE220C95A700D531B1 /* UtilitiesFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9723BD220C95A600D531B1 /* UtilitiesFile.swift */; };
 		1A9723C0220C9E0300D531B1 /* SweetAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9723BF220C9E0300D531B1 /* SweetAlert.swift */; };
@@ -15,6 +16,7 @@
 		1A9723C6220CB6DD00D531B1 /* TypesOfProductCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9723C5220CB6DD00D531B1 /* TypesOfProductCollectionViewCell.swift */; };
 		1A9723CA220CBB6200D531B1 /* TypeOfProductNameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9723C9220CBB6200D531B1 /* TypeOfProductNameTableViewCell.swift */; };
 		1A9723CC220CBB9100D531B1 /* TypesOfProductItemsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9723CB220CBB9100D531B1 /* TypesOfProductItemsTableViewCell.swift */; };
+		1AB9AF0522108E2400F44828 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AB9AF0322108E2400F44828 /* MBProgressHUD.m */; };
 		1ADC7EEF220BC99800CD3ACD /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ADC7EEE220BC99800CD3ACD /* HomeViewController.swift */; };
 		1ADC7EF1220BC9B700CD3ACD /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ADC7EF0220BC9B700CD3ACD /* CartViewController.swift */; };
 		1ADC7EF4220BCA8000CD3ACD /* ChaiGuruTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ADC7EF3220BCA8000CD3ACD /* ChaiGuruTabBarViewController.swift */; };
@@ -43,6 +45,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1A4A5A23221094D90034437A /* SingletonClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingletonClass.swift; sourceTree = "<group>"; };
 		1A9723BB220C957B00D531B1 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		1A9723BD220C95A600D531B1 /* UtilitiesFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilitiesFile.swift; sourceTree = "<group>"; };
 		1A9723BF220C9E0300D531B1 /* SweetAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SweetAlert.swift; sourceTree = "<group>"; };
@@ -51,6 +54,9 @@
 		1A9723C5220CB6DD00D531B1 /* TypesOfProductCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypesOfProductCollectionViewCell.swift; sourceTree = "<group>"; };
 		1A9723C9220CBB6200D531B1 /* TypeOfProductNameTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeOfProductNameTableViewCell.swift; sourceTree = "<group>"; };
 		1A9723CB220CBB9100D531B1 /* TypesOfProductItemsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypesOfProductItemsTableViewCell.swift; sourceTree = "<group>"; };
+		1AB9AF0222108E2200F44828 /* ChaiGuru-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ChaiGuru-Bridging-Header.h"; sourceTree = "<group>"; };
+		1AB9AF0322108E2400F44828 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		1AB9AF0422108E2400F44828 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		1ADC7EEE220BC99800CD3ACD /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		1ADC7EF0220BC9B700CD3ACD /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
 		1ADC7EF3220BCA8000CD3ACD /* ChaiGuruTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChaiGuruTabBarViewController.swift; sourceTree = "<group>"; };
@@ -119,6 +125,15 @@
 				1A9723CB220CBB9100D531B1 /* TypesOfProductItemsTableViewCell.swift */,
 			);
 			path = TableViewCells;
+			sourceTree = "<group>";
+		};
+		1AB9AF0622108E2D00F44828 /* MBProgreebarHud */ = {
+			isa = PBXGroup;
+			children = (
+				1AB9AF0422108E2400F44828 /* MBProgressHUD.h */,
+				1AB9AF0322108E2400F44828 /* MBProgressHUD.m */,
+			);
+			path = MBProgreebarHud;
 			sourceTree = "<group>";
 		};
 		1ADC7EF2220BC9BE00CD3ACD /* ViewControllers */ = {
@@ -204,6 +219,9 @@
 				1A9723BF220C9E0300D531B1 /* SweetAlert.swift */,
 				1AE20BBE220B64DA00B6897D /* ConstantsFile.swift */,
 				7D13C7F8220C0C840087E6E5 /* Reachability.swift */,
+				1A4A5A23221094D90034437A /* SingletonClass.swift */,
+				1AB9AF0222108E2200F44828 /* ChaiGuru-Bridging-Header.h */,
+				1AB9AF0622108E2D00F44828 /* MBProgreebarHud */,
 			);
 			path = SupportedFiles;
 			sourceTree = "<group>";
@@ -259,6 +277,7 @@
 				TargetAttributes = {
 					1AE20B8D220B453500B6897D = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1010;
 					};
 				};
 			};
@@ -352,6 +371,8 @@
 				1AE20BBB220B5C0200B6897D /* UserDefaultStored.swift in Sources */,
 				1A9723CA220CBB6200D531B1 /* TypeOfProductNameTableViewCell.swift in Sources */,
 				1AE20BB8220B4E5F00B6897D /* RoundedCornersExtensionFile.swift in Sources */,
+				1AB9AF0522108E2400F44828 /* MBProgressHUD.m in Sources */,
+				1A4A5A24221094D90034437A /* SingletonClass.swift in Sources */,
 				1ADC7EEF220BC99800CD3ACD /* HomeViewController.swift in Sources */,
 				1AE20B94220B453600B6897D /* ViewController.swift in Sources */,
 				1A9723C4220CB6B100D531B1 /* HomePageCollectionViewCell.swift in Sources */,
@@ -514,6 +535,7 @@
 			baseConfigurationReference = C16EC7E94A13F3ECF968D94B /* Pods-ChaiGuru.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 9KFRHG4MU5;
 				INFOPLIST_FILE = ChaiGuru/Info.plist;
@@ -525,6 +547,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.voipSample.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = VOIP_Sample_Development_Jan_23_2019;
+				SWIFT_OBJC_BRIDGING_HEADER = "ChaiGuru/SupportedFiles/ChaiGuru-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -535,6 +559,7 @@
 			baseConfigurationReference = 2036F66EE3101C4A2A876145 /* Pods-ChaiGuru.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 9KFRHG4MU5;
 				INFOPLIST_FILE = ChaiGuru/Info.plist;
@@ -546,6 +571,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.voipSample.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = VOIP_Sample_Development_Jan_23_2019;
+				SWIFT_OBJC_BRIDGING_HEADER = "ChaiGuru/SupportedFiles/ChaiGuru-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

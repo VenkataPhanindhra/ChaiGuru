@@ -44,7 +44,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let navigationController :UINavigationController!
         
         //Testing
-        UserDefaultStored.isLoggedIn = "0"
+//        UserDefaultStored.isLoggedIn = "0"
         
         
         if UserDefaultStored.isLoggedIn == "1"{
