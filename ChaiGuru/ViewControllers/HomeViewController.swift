@@ -165,58 +165,100 @@ extension HomeViewController : UITableViewDelegate,UITableViewDataSource, Naviga
     
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return arrayofDictProductObjects.count
+        return arrayofDictProductObjects.count + 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
         
         return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "TypesOfProductItemsTableViewCell", for: indexPath) as! TypesOfProductItemsTableViewCell
+       
         
-        let arrOfDict = arrayofDictProductObjects[indexPath.section] as! NSDictionary
-        let dictCategory = arrayOfCategories![indexPath.section] as! NSDictionary
-        let categoryName = dictCategory.chaiGuruObject(forKey: "c_name")
+        if indexPath.section == 0{
+            
+            let cell = tableView.dequeueReusableCell(withIdentifier: "HomeSlideScreensTableViewCell", for: indexPath) as! HomeSlideScreensTableViewCell
+            
+            cell.collectionOfSlidesView.reloadData()
+            
+            return cell
+            
+            
+        }else{
+            
+            let cell = tableView.dequeueReusableCell(withIdentifier: "TypesOfProductItemsTableViewCell", for: indexPath) as! TypesOfProductItemsTableViewCell
+            
+            let indexSection = indexPath.section - 1
+            
+            let arrOfDict = arrayofDictProductObjects[indexSection] as! NSDictionary
+            let dictCategory = arrayOfCategories![indexSection] as! NSDictionary
+            let categoryName = dictCategory.chaiGuruObject(forKey: "c_name")
+            
+            
+            let arrOfAllValues = arrOfDict.value(forKey: categoryName) as! NSMutableArray
+            
+            
+            cell.getDataFromHomeScreen(arrayOfProducts: arrOfAllValues)
+            
+            cell.delegateObj = self
+            
+            return cell
+            
+        }
         
-        
-        let arrOfAllValues = arrOfDict.value(forKey: categoryName) as! NSMutableArray
-        
-        
-        cell.getDataFromHomeScreen(arrayOfProducts: arrOfAllValues)
-        
-        cell.delegateObj = self
-        
-       // cell.productItemsCollectionView.reloadData()
-        
-        
-        return cell
-    }
+      }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 200
+        
+        if indexPath.section == 0{
+             return 220
+            
+        }else{
+             return 200
+        }
+        
+       
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
        
-        let viewHeader = tableView.dequeueReusableCell(withIdentifier: "TypeOfProductNameTableViewCell") as! TypeOfProductNameTableViewCell
+      
+        if section == 0{
+            
+            return UIView()
+            
+        }else{
+            
+            let viewHeader = tableView.dequeueReusableCell(withIdentifier: "TypeOfProductNameTableViewCell") as! TypeOfProductNameTableViewCell
+            
+            viewHeader.btnOfViewAll.addTarget(self, action: #selector(viewAllBtnTapped(_:)), for: .touchUpInside)
+            
+            let indexSection = section - 1
+            
+            let dictCategory = arrayOfCategories![indexSection] as! NSDictionary
+            let categoryName = dictCategory.chaiGuruObject(forKey: "c_name")
+            
+            viewHeader.lblOfProduct.text = categoryName
+            
+            return viewHeader
+            
+        }
         
-        viewHeader.btnOfViewAll.addTarget(self, action: #selector(viewAllBtnTapped(_:)), for: .touchUpInside)
-        
-        let dictCategory = arrayOfCategories![section] as! NSDictionary
-        let categoryName = dictCategory.chaiGuruObject(forKey: "c_name")
-        
-        viewHeader.lblOfProduct.text = categoryName
-        
-        return viewHeader
+       
         
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 60
+        
+        if section == 0{
+            return 0
+        }else{
+            return 60
+        }
+        
+        
     }
     
     @objc func viewAllBtnTapped(_ sender : Any){

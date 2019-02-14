@@ -16,6 +16,12 @@
 		1A9723C6220CB6DD00D531B1 /* TypesOfProductCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9723C5220CB6DD00D531B1 /* TypesOfProductCollectionViewCell.swift */; };
 		1A9723CA220CBB6200D531B1 /* TypeOfProductNameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9723C9220CBB6200D531B1 /* TypeOfProductNameTableViewCell.swift */; };
 		1A9723CC220CBB9100D531B1 /* TypesOfProductItemsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9723CB220CBB9100D531B1 /* TypesOfProductItemsTableViewCell.swift */; };
+		1AAB19BB2215CC2B009F0CDB /* HomeSlideScreensTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAB19BA2215CC2B009F0CDB /* HomeSlideScreensTableViewCell.swift */; };
+		1AAB19BD2215D30E009F0CDB /* ChaiDetProductItemsImagesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAB19BC2215D30E009F0CDB /* ChaiDetProductItemsImagesTableViewCell.swift */; };
+		1AAB19BF2215E4A7009F0CDB /* ChaiDetaDescrbtionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAB19BE2215E4A7009F0CDB /* ChaiDetaDescrbtionsTableViewCell.swift */; };
+		1AAB19C12215E4F9009F0CDB /* ChaiDetaIngrediantsImagesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAB19C02215E4F9009F0CDB /* ChaiDetaIngrediantsImagesTableViewCell.swift */; };
+		1AAB19C32215E540009F0CDB /* ChaiProductDetailsSectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAB19C22215E540009F0CDB /* ChaiProductDetailsSectionTableViewCell.swift */; };
+		1AAB19C52215E56C009F0CDB /* ChaiProductDetailsRowTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAB19C42215E56C009F0CDB /* ChaiProductDetailsRowTableViewCell.swift */; };
 		1AB9AF0522108E2400F44828 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AB9AF0322108E2400F44828 /* MBProgressHUD.m */; };
 		1ADC7EEF220BC99800CD3ACD /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ADC7EEE220BC99800CD3ACD /* HomeViewController.swift */; };
 		1ADC7EF1220BC9B700CD3ACD /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ADC7EF0220BC9B700CD3ACD /* CartViewController.swift */; };
@@ -54,6 +60,12 @@
 		1A9723C5220CB6DD00D531B1 /* TypesOfProductCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypesOfProductCollectionViewCell.swift; sourceTree = "<group>"; };
 		1A9723C9220CBB6200D531B1 /* TypeOfProductNameTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeOfProductNameTableViewCell.swift; sourceTree = "<group>"; };
 		1A9723CB220CBB9100D531B1 /* TypesOfProductItemsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypesOfProductItemsTableViewCell.swift; sourceTree = "<group>"; };
+		1AAB19BA2215CC2B009F0CDB /* HomeSlideScreensTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSlideScreensTableViewCell.swift; sourceTree = "<group>"; };
+		1AAB19BC2215D30E009F0CDB /* ChaiDetProductItemsImagesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChaiDetProductItemsImagesTableViewCell.swift; sourceTree = "<group>"; };
+		1AAB19BE2215E4A7009F0CDB /* ChaiDetaDescrbtionsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChaiDetaDescrbtionsTableViewCell.swift; sourceTree = "<group>"; };
+		1AAB19C02215E4F9009F0CDB /* ChaiDetaIngrediantsImagesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChaiDetaIngrediantsImagesTableViewCell.swift; sourceTree = "<group>"; };
+		1AAB19C22215E540009F0CDB /* ChaiProductDetailsSectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChaiProductDetailsSectionTableViewCell.swift; sourceTree = "<group>"; };
+		1AAB19C42215E56C009F0CDB /* ChaiProductDetailsRowTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChaiProductDetailsRowTableViewCell.swift; sourceTree = "<group>"; };
 		1AB9AF0222108E2200F44828 /* ChaiGuru-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ChaiGuru-Bridging-Header.h"; sourceTree = "<group>"; };
 		1AB9AF0322108E2400F44828 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		1AB9AF0422108E2400F44828 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
@@ -123,8 +135,22 @@
 			children = (
 				1A9723C9220CBB6200D531B1 /* TypeOfProductNameTableViewCell.swift */,
 				1A9723CB220CBB9100D531B1 /* TypesOfProductItemsTableViewCell.swift */,
+				1AAB19BA2215CC2B009F0CDB /* HomeSlideScreensTableViewCell.swift */,
+				1AAB19C62215E5A8009F0CDB /* ChaiProductDetailsCells */,
 			);
 			path = TableViewCells;
+			sourceTree = "<group>";
+		};
+		1AAB19C62215E5A8009F0CDB /* ChaiProductDetailsCells */ = {
+			isa = PBXGroup;
+			children = (
+				1AAB19BC2215D30E009F0CDB /* ChaiDetProductItemsImagesTableViewCell.swift */,
+				1AAB19BE2215E4A7009F0CDB /* ChaiDetaDescrbtionsTableViewCell.swift */,
+				1AAB19C02215E4F9009F0CDB /* ChaiDetaIngrediantsImagesTableViewCell.swift */,
+				1AAB19C22215E540009F0CDB /* ChaiProductDetailsSectionTableViewCell.swift */,
+				1AAB19C42215E56C009F0CDB /* ChaiProductDetailsRowTableViewCell.swift */,
+			);
+			path = ChaiProductDetailsCells;
 			sourceTree = "<group>";
 		};
 		1AB9AF0622108E2D00F44828 /* MBProgreebarHud */ = {
@@ -366,19 +392,25 @@
 			files = (
 				1AE20BBF220B64DA00B6897D /* ConstantsFile.swift in Sources */,
 				1A9723C2220CB4CF00D531B1 /* ForgotViewController.swift in Sources */,
+				1AAB19BD2215D30E009F0CDB /* ChaiDetProductItemsImagesTableViewCell.swift in Sources */,
+				1AAB19BF2215E4A7009F0CDB /* ChaiDetaDescrbtionsTableViewCell.swift in Sources */,
 				1AE20BA6220B46EC00B6897D /* LoginViewController.swift in Sources */,
 				1AE20BA4220B46DC00B6897D /* AboutViewController.swift in Sources */,
 				1AE20BBB220B5C0200B6897D /* UserDefaultStored.swift in Sources */,
 				1A9723CA220CBB6200D531B1 /* TypeOfProductNameTableViewCell.swift in Sources */,
+				1AAB19C52215E56C009F0CDB /* ChaiProductDetailsRowTableViewCell.swift in Sources */,
 				1AE20BB8220B4E5F00B6897D /* RoundedCornersExtensionFile.swift in Sources */,
 				1AB9AF0522108E2400F44828 /* MBProgressHUD.m in Sources */,
 				1A4A5A24221094D90034437A /* SingletonClass.swift in Sources */,
+				1AAB19C32215E540009F0CDB /* ChaiProductDetailsSectionTableViewCell.swift in Sources */,
 				1ADC7EEF220BC99800CD3ACD /* HomeViewController.swift in Sources */,
 				1AE20B94220B453600B6897D /* ViewController.swift in Sources */,
 				1A9723C4220CB6B100D531B1 /* HomePageCollectionViewCell.swift in Sources */,
+				1AAB19BB2215CC2B009F0CDB /* HomeSlideScreensTableViewCell.swift in Sources */,
 				1A9723BC220C957B00D531B1 /* Extension.swift in Sources */,
 				1A9723CC220CBB9100D531B1 /* TypesOfProductItemsTableViewCell.swift in Sources */,
 				1A9723BE220C95A700D531B1 /* UtilitiesFile.swift in Sources */,
+				1AAB19C12215E4F9009F0CDB /* ChaiDetaIngrediantsImagesTableViewCell.swift in Sources */,
 				1A9723C6220CB6DD00D531B1 /* TypesOfProductCollectionViewCell.swift in Sources */,
 				1ADC7EF1220BC9B700CD3ACD /* CartViewController.swift in Sources */,
 				7D13C7F9220C0C840087E6E5 /* Reachability.swift in Sources */,

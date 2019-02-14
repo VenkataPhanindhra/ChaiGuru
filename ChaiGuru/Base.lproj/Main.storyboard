@@ -10,6 +10,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="Montserrat-Bold.ttf">
+            <string>Montserrat-Bold</string>
+        </array>
         <array key="Montserrat-Medium.ttf">
             <string>Montserrat-Medium</string>
         </array>
@@ -158,99 +161,113 @@
                                             <constraint firstAttribute="height" constant="60" id="cVN-jz-YHo"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vd0-8J-Dtq">
-                                        <rect key="frame" x="0.0" y="60" width="375" height="200"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Today Deal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Twt-KV-LOK">
-                                                <rect key="frame" x="16" y="0.0" width="343" height="30"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="30" id="2IN-9p-cV4"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="18"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="KVj-lh-ms6">
-                                                <rect key="frame" x="16" y="38" width="343" height="154"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="7zN-fd-X7f">
-                                                    <size key="itemSize" width="343" height="152"/>
-                                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                                </collectionViewFlowLayout>
-                                                <cells>
-                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="HomePageCollectionViewCell" id="krb-fm-qqD" customClass="HomePageCollectionViewCell" customModule="ChaiGuru" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="1" width="343" height="152"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                                            <rect key="frame" x="0.0" y="0.0" width="343" height="152"/>
-                                                            <autoresizingMask key="autoresizingMask"/>
-                                                            <subviews>
-                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f6R-3i-7Mr" customClass="RoundUIView" customModule="ChaiGuru" customModuleProvider="target">
-                                                                    <rect key="frame" x="8" y="8" width="327" height="136"/>
-                                                                    <subviews>
-                                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mgn-zE-DGs">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="327" height="136"/>
-                                                                        </imageView>
-                                                                    </subviews>
-                                                                    <color key="backgroundColor" red="0.0" green="0.4549019608" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
-                                                                    <constraints>
-                                                                        <constraint firstItem="mgn-zE-DGs" firstAttribute="centerX" secondItem="f6R-3i-7Mr" secondAttribute="centerX" id="6a3-R3-j9B"/>
-                                                                        <constraint firstItem="mgn-zE-DGs" firstAttribute="width" secondItem="f6R-3i-7Mr" secondAttribute="width" id="NAH-Cr-Wme"/>
-                                                                        <constraint firstItem="mgn-zE-DGs" firstAttribute="centerY" secondItem="f6R-3i-7Mr" secondAttribute="centerY" id="cJe-J0-CGQ"/>
-                                                                        <constraint firstItem="mgn-zE-DGs" firstAttribute="height" secondItem="f6R-3i-7Mr" secondAttribute="height" id="hRG-7T-VFb"/>
-                                                                    </constraints>
-                                                                    <userDefinedRuntimeAttributes>
-                                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                            <real key="value" value="8"/>
-                                                                        </userDefinedRuntimeAttribute>
-                                                                    </userDefinedRuntimeAttributes>
-                                                                </view>
-                                                            </subviews>
-                                                        </view>
-                                                        <constraints>
-                                                            <constraint firstAttribute="trailing" secondItem="f6R-3i-7Mr" secondAttribute="trailing" constant="8" id="BZl-So-P21"/>
-                                                            <constraint firstItem="f6R-3i-7Mr" firstAttribute="top" secondItem="krb-fm-qqD" secondAttribute="top" constant="8" id="GST-cd-or8"/>
-                                                            <constraint firstAttribute="bottom" secondItem="f6R-3i-7Mr" secondAttribute="bottom" constant="8" id="Oii-AU-pde"/>
-                                                            <constraint firstItem="f6R-3i-7Mr" firstAttribute="leading" secondItem="krb-fm-qqD" secondAttribute="leading" constant="8" id="e1V-7H-bE6"/>
-                                                        </constraints>
-                                                        <connections>
-                                                            <outlet property="imgOfCollections" destination="mgn-zE-DGs" id="DQE-uE-rwi"/>
-                                                        </connections>
-                                                    </collectionViewCell>
-                                                </cells>
-                                                <connections>
-                                                    <outlet property="dataSource" destination="i9Z-1o-Wvj" id="nQb-n5-hfR"/>
-                                                    <outlet property="delegate" destination="i9Z-1o-Wvj" id="euC-DO-dND"/>
-                                                </connections>
-                                            </collectionView>
-                                        </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstItem="Twt-KV-LOK" firstAttribute="top" secondItem="vd0-8J-Dtq" secondAttribute="top" id="JTH-I6-og3"/>
-                                            <constraint firstAttribute="height" constant="200" id="Re7-tp-OcB"/>
-                                            <constraint firstAttribute="bottom" secondItem="KVj-lh-ms6" secondAttribute="bottom" constant="8" id="Uzd-aA-Wze"/>
-                                            <constraint firstItem="KVj-lh-ms6" firstAttribute="top" secondItem="Twt-KV-LOK" secondAttribute="bottom" constant="8" id="aks-eJ-coQ"/>
-                                            <constraint firstAttribute="trailing" secondItem="KVj-lh-ms6" secondAttribute="trailing" constant="16" id="cZT-xH-qDh"/>
-                                            <constraint firstAttribute="trailing" secondItem="Twt-KV-LOK" secondAttribute="trailing" constant="16" id="hkl-l1-nvT"/>
-                                            <constraint firstItem="Twt-KV-LOK" firstAttribute="leading" secondItem="vd0-8J-Dtq" secondAttribute="leading" constant="16" id="mvQ-w4-RiQ"/>
-                                            <constraint firstItem="KVj-lh-ms6" firstAttribute="leading" secondItem="vd0-8J-Dtq" secondAttribute="leading" constant="16" id="tDS-Qa-H1E"/>
-                                        </constraints>
-                                    </view>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Tdh-Mk-nti">
-                                        <rect key="frame" x="0.0" y="260" width="375" height="338"/>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Tdh-Mk-nti">
+                                        <rect key="frame" x="0.0" y="60" width="375" height="538"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <prototypes>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="HomeSlideScreensTableViewCell" rowHeight="220" id="Fgz-mJ-r8i" customClass="HomeSlideScreensTableViewCell" customModule="ChaiGuru" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="28" width="375" height="220"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Fgz-mJ-r8i" id="Ttk-bY-Xnn">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="219.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Today Deal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8AN-0e-N0Q">
+                                                            <rect key="frame" x="16" y="12" width="104" height="25"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="25" id="Zci-8L-3wo"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="18"/>
+                                                            <color key="textColor" red="0.21176470589999999" green="0.21176470589999999" blue="0.21176470589999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="dgY-5a-FMZ">
+                                                            <rect key="frame" x="16" y="53" width="343" height="150.5"/>
+                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ZvO-Zf-d4v">
+                                                                <size key="itemSize" width="343" height="148"/>
+                                                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                            </collectionViewFlowLayout>
+                                                            <cells>
+                                                                <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="HomePageCollectionViewCell" id="jmU-tv-pSe" customClass="HomePageCollectionViewCell" customModule="ChaiGuru" customModuleProvider="target">
+                                                                    <rect key="frame" x="0.0" y="1.5" width="343" height="148"/>
+                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="343" height="148"/>
+                                                                        <autoresizingMask key="autoresizingMask"/>
+                                                                        <subviews>
+                                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kr4-fD-kr4" customClass="RoundUIView" customModule="ChaiGuru" customModuleProvider="target">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="343" height="148"/>
+                                                                                <subviews>
+                                                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AZ5-Pg-Bkr">
+                                                                                        <rect key="frame" x="0.0" y="0.0" width="343" height="148"/>
+                                                                                        <color key="backgroundColor" red="0.27058823529999998" green="0.72941176470000002" blue="0.51764705879999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                                                    </imageView>
+                                                                                </subviews>
+                                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                <constraints>
+                                                                                    <constraint firstAttribute="trailing" secondItem="AZ5-Pg-Bkr" secondAttribute="trailing" id="dZT-C2-oA5"/>
+                                                                                    <constraint firstItem="AZ5-Pg-Bkr" firstAttribute="leading" secondItem="kr4-fD-kr4" secondAttribute="leading" id="jPU-FO-62o"/>
+                                                                                    <constraint firstItem="AZ5-Pg-Bkr" firstAttribute="top" secondItem="kr4-fD-kr4" secondAttribute="top" id="k4B-b8-0qJ"/>
+                                                                                    <constraint firstAttribute="bottom" secondItem="AZ5-Pg-Bkr" secondAttribute="bottom" id="tuu-4a-cuZ"/>
+                                                                                </constraints>
+                                                                                <userDefinedRuntimeAttributes>
+                                                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                                        <real key="value" value="5"/>
+                                                                                    </userDefinedRuntimeAttribute>
+                                                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                                        <color key="value" red="0.27058823529999998" green="0.72941176470000002" blue="0.51764705879999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                                                    </userDefinedRuntimeAttribute>
+                                                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                                        <real key="value" value="2"/>
+                                                                                    </userDefinedRuntimeAttribute>
+                                                                                </userDefinedRuntimeAttributes>
+                                                                            </view>
+                                                                        </subviews>
+                                                                    </view>
+                                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <constraints>
+                                                                        <constraint firstItem="kr4-fD-kr4" firstAttribute="top" secondItem="jmU-tv-pSe" secondAttribute="top" id="A4U-cd-Umf"/>
+                                                                        <constraint firstAttribute="bottom" secondItem="kr4-fD-kr4" secondAttribute="bottom" id="GIj-F9-yWp"/>
+                                                                        <constraint firstAttribute="trailing" secondItem="kr4-fD-kr4" secondAttribute="trailing" id="SB4-Yk-uie"/>
+                                                                        <constraint firstItem="kr4-fD-kr4" firstAttribute="leading" secondItem="jmU-tv-pSe" secondAttribute="leading" id="y2T-Dm-gsR"/>
+                                                                    </constraints>
+                                                                    <connections>
+                                                                        <outlet property="imgOfCollections" destination="AZ5-Pg-Bkr" id="aB9-rx-Jgn"/>
+                                                                    </connections>
+                                                                </collectionViewCell>
+                                                            </cells>
+                                                            <connections>
+                                                                <outlet property="dataSource" destination="Fgz-mJ-r8i" id="Zzp-Q1-gMe"/>
+                                                                <outlet property="delegate" destination="Fgz-mJ-r8i" id="hfb-fu-R5I"/>
+                                                            </connections>
+                                                        </collectionView>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="dgY-5a-FMZ" firstAttribute="leading" secondItem="Ttk-bY-Xnn" secondAttribute="leading" constant="16" id="4FW-oT-QDP"/>
+                                                        <constraint firstItem="8AN-0e-N0Q" firstAttribute="leading" secondItem="Ttk-bY-Xnn" secondAttribute="leading" constant="16" id="BgS-Fx-n3Z"/>
+                                                        <constraint firstItem="8AN-0e-N0Q" firstAttribute="top" secondItem="Ttk-bY-Xnn" secondAttribute="top" constant="12" id="Evd-pR-fLM"/>
+                                                        <constraint firstAttribute="bottom" secondItem="dgY-5a-FMZ" secondAttribute="bottom" constant="16" id="FKQ-eu-9nG"/>
+                                                        <constraint firstItem="dgY-5a-FMZ" firstAttribute="top" secondItem="8AN-0e-N0Q" secondAttribute="bottom" constant="16" id="Sae-U4-fmz"/>
+                                                        <constraint firstAttribute="trailing" secondItem="dgY-5a-FMZ" secondAttribute="trailing" constant="16" id="jnz-oY-ybQ"/>
+                                                    </constraints>
+                                                </tableViewCellContentView>
+                                                <connections>
+                                                    <outlet property="collectionOfSlidesView" destination="dgY-5a-FMZ" id="cEa-pK-oJa"/>
+                                                </connections>
+                                            </tableViewCell>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TypeOfProductNameTableViewCell" rowHeight="63" id="bIY-fO-Rej" customClass="TypeOfProductNameTableViewCell" customModule="ChaiGuru" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="28" width="375" height="63"/>
+                                                <rect key="frame" x="0.0" y="248" width="375" height="63"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bIY-fO-Rej" id="l2w-IE-gXl">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="62.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Regional Tea’s" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kJB-Di-SSb">
-                                                            <rect key="frame" x="16" y="21" width="125" height="21"/>
-                                                            <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="17"/>
+                                                            <rect key="frame" x="16" y="20.5" width="132.5" height="22"/>
+                                                            <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="18"/>
                                                             <color key="textColor" red="0.21176470588235294" green="0.21176470588235294" blue="0.21176470588235294" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -277,7 +294,7 @@
                                                 </connections>
                                             </tableViewCell>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TypesOfProductItemsTableViewCell" rowHeight="192" id="4pe-0M-irz" customClass="TypesOfProductItemsTableViewCell" customModule="ChaiGuru" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="91" width="375" height="192"/>
+                                                <rect key="frame" x="0.0" y="311" width="375" height="192"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4pe-0M-irz" id="yAc-jb-Bsg">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="191.5"/>
@@ -466,15 +483,12 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="vd0-8J-Dtq" firstAttribute="top" secondItem="XYT-HM-Qyi" secondAttribute="bottom" id="AWV-Tg-OI3"/>
                                     <constraint firstAttribute="bottom" secondItem="Tdh-Mk-nti" secondAttribute="bottom" id="N7O-a7-jsA"/>
-                                    <constraint firstItem="vd0-8J-Dtq" firstAttribute="leading" secondItem="C5A-0e-GaA" secondAttribute="leading" id="VbY-re-DWD"/>
-                                    <constraint firstItem="Tdh-Mk-nti" firstAttribute="top" secondItem="vd0-8J-Dtq" secondAttribute="bottom" id="kIO-mW-l6a"/>
+                                    <constraint firstItem="Tdh-Mk-nti" firstAttribute="top" secondItem="XYT-HM-Qyi" secondAttribute="bottom" id="dRh-Bm-V9h"/>
                                     <constraint firstItem="XYT-HM-Qyi" firstAttribute="leading" secondItem="C5A-0e-GaA" secondAttribute="leading" id="mP0-3F-pyL"/>
                                     <constraint firstAttribute="trailing" secondItem="XYT-HM-Qyi" secondAttribute="trailing" id="oKV-0q-9Cl"/>
                                     <constraint firstAttribute="trailing" secondItem="Tdh-Mk-nti" secondAttribute="trailing" id="p81-aU-eGe"/>
                                     <constraint firstItem="XYT-HM-Qyi" firstAttribute="top" secondItem="C5A-0e-GaA" secondAttribute="top" id="qbH-8X-hGG"/>
-                                    <constraint firstAttribute="trailing" secondItem="vd0-8J-Dtq" secondAttribute="trailing" id="szV-JS-OKQ"/>
                                     <constraint firstItem="Tdh-Mk-nti" firstAttribute="leading" secondItem="C5A-0e-GaA" secondAttribute="leading" id="u8B-Zt-fWw"/>
                                 </constraints>
                             </view>
@@ -491,7 +505,6 @@
                     <tabBarItem key="tabBarItem" title="Home" id="FYn-ah-AQB"/>
                     <connections>
                         <outlet property="listOfTableView" destination="Tdh-Mk-nti" id="P4N-38-uTr"/>
-                        <outlet property="slideCollectionView" destination="KVj-lh-ms6" id="8AM-dR-bkx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Vv-Y3-Mgh" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -735,7 +748,7 @@
         <!--Chai Guru Details View Controller-->
         <scene sceneID="rxP-JD-zMz">
             <objects>
-                <viewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="TPK-Eq-ucw" customClass="ChaiGuruDetailsViewController" customModule="ChaiGuru" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ChaiGuruDetailsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="TPK-Eq-ucw" customClass="ChaiGuruDetailsViewController" customModule="ChaiGuru" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7Ee-zP-5n7">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -767,7 +780,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="587"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="270" id="xk5-ID-4NJ">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChaiDetProductItemsImagesTableViewCell" rowHeight="270" id="xk5-ID-4NJ" customClass="ChaiDetProductItemsImagesTableViewCell" customModule="ChaiGuru" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="270"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xk5-ID-4NJ" id="hz8-Zk-w4q">
@@ -807,7 +820,14 @@
                                                             </constraints>
                                                         </collectionViewCell>
                                                     </cells>
+                                                    <connections>
+                                                        <outlet property="dataSource" destination="xk5-ID-4NJ" id="cuE-i1-3Cd"/>
+                                                        <outlet property="delegate" destination="xk5-ID-4NJ" id="1Hq-cv-qKe"/>
+                                                    </connections>
                                                 </collectionView>
+                                                <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="45J-10-uhx">
+                                                    <rect key="frame" x="168" y="131" width="39" height="37"/>
+                                                </pageControl>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Araku Chai from Chai Guru" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ad0-YT-vbH">
                                                     <rect key="frame" x="16" y="183" width="296" height="40"/>
                                                     <constraints>
@@ -850,10 +870,12 @@
                                                 <constraint firstItem="70E-vf-Czr" firstAttribute="top" secondItem="hz8-Zk-w4q" secondAttribute="top" id="CKK-7p-vHO"/>
                                                 <constraint firstItem="Agf-rd-rVb" firstAttribute="centerY" secondItem="Ad0-YT-vbH" secondAttribute="centerY" id="Izw-7u-drI"/>
                                                 <constraint firstAttribute="trailing" secondItem="70E-vf-Czr" secondAttribute="trailing" id="Jh8-EI-r3N"/>
+                                                <constraint firstItem="Ad0-YT-vbH" firstAttribute="top" secondItem="45J-10-uhx" secondAttribute="bottom" constant="15" id="Jpg-tJ-GSU"/>
                                                 <constraint firstItem="bw0-yp-Khk" firstAttribute="leading" secondItem="hz8-Zk-w4q" secondAttribute="leading" constant="16" id="KMN-6I-jf7"/>
                                                 <constraint firstAttribute="trailing" secondItem="ogj-e3-kE2" secondAttribute="trailing" constant="15" id="RgA-KI-PZd"/>
                                                 <constraint firstAttribute="bottom" secondItem="ogj-e3-kE2" secondAttribute="bottom" id="UZW-wQ-5JQ"/>
                                                 <constraint firstItem="Agf-rd-rVb" firstAttribute="leading" secondItem="Ad0-YT-vbH" secondAttribute="trailing" constant="8" id="XPR-3z-mtj"/>
+                                                <constraint firstItem="45J-10-uhx" firstAttribute="centerX" secondItem="hz8-Zk-w4q" secondAttribute="centerX" id="YK5-NA-Kem"/>
                                                 <constraint firstAttribute="trailing" secondItem="Agf-rd-rVb" secondAttribute="trailing" constant="15" id="dEu-ng-bNB"/>
                                                 <constraint firstItem="Ad0-YT-vbH" firstAttribute="top" secondItem="70E-vf-Czr" secondAttribute="bottom" constant="8" id="eD2-yV-ePq"/>
                                                 <constraint firstItem="Ad0-YT-vbH" firstAttribute="leading" secondItem="hz8-Zk-w4q" secondAttribute="leading" constant="16" id="jFU-FM-7BZ"/>
@@ -861,8 +883,15 @@
                                                 <constraint firstItem="70E-vf-Czr" firstAttribute="leading" secondItem="hz8-Zk-w4q" secondAttribute="leading" id="tMC-pv-UYg"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="btnOfFavorite" destination="Agf-rd-rVb" id="HGC-L2-kr3"/>
+                                            <outlet property="imgOfCollectionViews" destination="70E-vf-Czr" id="dft-ga-nQd"/>
+                                            <outlet property="lblOfProductCost" destination="bw0-yp-Khk" id="Cet-9d-txm"/>
+                                            <outlet property="lblOfProductName" destination="Ad0-YT-vbH" id="V6f-Is-7bP"/>
+                                            <outlet property="pageControl" destination="45J-10-uhx" id="vls-xW-iRr"/>
+                                        </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="100" id="hqh-9B-wCL">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="taDescrbtionsTableViewCell" rowHeight="100" id="hqh-9B-wCL" customClass="ChaiDetaDescrbtionsTableViewCell" customModule="ChaiGuru" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="298" width="375" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hqh-9B-wCL" id="aSr-vI-Teg">
@@ -907,6 +936,10 @@
                                                 <constraint firstItem="Ozm-WS-ksq" firstAttribute="leading" secondItem="aSr-vI-Teg" secondAttribute="leading" constant="16" id="tbz-tc-Sis"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="lblOfExplana" destination="1Wj-Nb-toH" id="H4w-fJ-Sje"/>
+                                            <outlet property="lblOfProductDescr" destination="lbg-hF-glQ" id="wjc-TI-YDh"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="147" id="3sN-oX-xu9">
                                         <rect key="frame" x="0.0" y="398" width="375" height="147"/>

@@ -39,7 +39,7 @@ class TypesOfProductItemsTableViewCell: UITableViewCell {
 
        arrOfCollectioViewProductData.removeAllObjects()
         
-       arrOfCollectioViewProductData = arrayOfProducts
+       arrOfCollectioViewProductData.addObjects(from: arrayOfProducts as! [Any])
         
         
         productItemsCollectionView.reloadData()
@@ -72,21 +72,18 @@ extension TypesOfProductItemsTableViewCell : UICollectionViewDataSource,UICollec
         collectionCell.lblOfProductName.text = dictProductData.chaiGuruObject(forKey: "p_name")
         collectionCell.lblOfProductCost.text = "₹" + dictProductData.chaiGuruObject(forKey: "p_price")
         
+        collectionCell.imgOfCollections.layer.cornerRadius = 8
+        collectionCell.imgOfCollections.layer.masksToBounds = true
+        
         
         DispatchQueue.main.async {
             
-            let img = dictProductData.chaiGuruObject(forKey: "img")
-            let constructOfImage = "http://3.1.5.235/assets/templateassets/images/chaiguru/boxes/"
+            let img = dictProductData.chaiGuruObject(forKey: "img6")
+            let constructOfImage = "http://3.1.5.235/assets/templateassets/images/chaiguru/home/"
             
             let finalImage = constructOfImage + img
             
-            let url = URL.init(string: finalImage)
-            
-            let data = try? Data(contentsOf: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
-            
-            collectionCell.imgOfCollections.image = UIImage.init(data: data!)
-            
-//          collectionCell.imgOfCollections.sd_setImage(with: url, placeholderImage: UIImage())
+            collectionCell.imgOfCollections.sd_setImage(with: URL.init(string: finalImage), placeholderImage: UIImage.init(named: "LoginLogo"))
             
         }
         
