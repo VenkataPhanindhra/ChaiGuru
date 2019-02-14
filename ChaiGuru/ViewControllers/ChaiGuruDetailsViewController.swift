@@ -10,6 +10,8 @@ import UIKit
 
 class ChaiGuruDetailsViewController: UIViewController {
 
+    @IBOutlet weak var tbOfProductDetails : UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -27,4 +29,28 @@ class ChaiGuruDetailsViewController: UIViewController {
     }
     */
 
+}
+
+extension ChaiGuruDetailsViewController : UITableViewDelegate,UITableViewDataSource{
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 7
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if section == 0 || section == 1 || section == 2 || section == 3{
+            return 0
+        }else{
+            return 1
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "", for: indexPath)
+        
+        
+        return cell
+     }
+    
 }

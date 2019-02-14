@@ -15,10 +15,17 @@ class ChaiguruConstants {
     static let HTTP_Request_Post = "POST"
     static let HTTP_Request_Get = "GET"
     
+//    struct Loading {
+        static let Loading = "Loading..."
+//    }
+    
+    
     struct APINames {
         
         static let user_registration = "user_registration"
         static let user_login = "user_login"
+        static let GetCategories = "GetCategories"
+        static let get_products_data = "get_products_data"
         
     }
     

@@ -13,11 +13,115 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var slideCollectionView : UICollectionView!
     @IBOutlet weak var listOfTableView : UITableView!
     
+    var arrayOfCategories : NSMutableArray!
+    var arrayOfAllProducts : NSMutableArray!
+    var arrayofDictProductObjects : NSMutableArray!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
+        arrayOfCategories = NSMutableArray()
+        arrayOfAllProducts = NSMutableArray()
+        arrayofDictProductObjects = NSMutableArray()
+        
+        
+        getCategoryTypes()
+        
+        
         // Do any additional setup after loading the view.
     }
+    
+    
+    func getCategoryTypes(){
+        
+        APIRequest.shareDInstance.MBProgress(view: self.view, message: ChaiguruConstants.Loading)
+        
+        APIRequest.shareDInstance.callApiRequestResponse(methodName: ChaiguruConstants.APINames.GetCategories, postString: "", postInputStream: [:] as AnyObject, requestType: ChaiguruConstants.HTTP_Request_Post, SuccessResponse: { (dataResponse) in
+            
+//            DispatchQueue.main.async {
+//                APIRequest.shareDInstance.hideProgreesHUD()
+//            }
+            
+            self.arrayOfCategories.addObjects(from: dataResponse as! [Any])
+            
+            self.getAllProductData()
+            
+            
+        }) { (statusCode) in
+            DispatchQueue.main.async {
+                APIRequest.shareDInstance.hideProgreesHUD()
+            }
+        }
+        
+        
+    }
+    
+    
+    func getAllProductData(){
+        
+       // APIRequest.shareDInstance.MBProgress(view: self.view, message: ChaiguruConstants.Loading)
+        
+        APIRequest.shareDInstance.callApiRequestResponse(methodName: ChaiguruConstants.APINames.get_products_data, postString: "", postInputStream: [:] as AnyObject, requestType: ChaiguruConstants.HTTP_Request_Post, SuccessResponse: { (dataResponse) in
+            
+            DispatchQueue.main.async {
+                APIRequest.shareDInstance.hideProgreesHUD()
+            }
+        
+            self.arrayOfAllProducts.addObjects(from: dataResponse as! [Any])
+            
+            self.devideDifferentCategoriesOfproductDataTypes()
+            
+        }) { (statusCode) in
+            DispatchQueue.main.async {
+                APIRequest.shareDInstance.hideProgreesHUD()
+            }
+        }
+        
+        
+    }
+    
+    
+    func devideDifferentCategoriesOfproductDataTypes(){
+        
+        
+        for indexObj in 0..<arrayOfCategories.count{
+            
+            let arrOfObjects = NSMutableArray()
+            let mutableDict  = NSMutableDictionary()
+            
+            let dictCategory = arrayOfCategories![indexObj] as! NSDictionary
+            let categoryID = dictCategory.chaiGuruObject(forKey: "c_id")
+            let categoryName = dictCategory.chaiGuruObject(forKey: "c_name")
+            
+            for indexObj in 0..<arrayOfAllProducts.count{
+                
+                let dictProduct = arrayOfAllProducts![indexObj] as! NSDictionary
+                let productID = dictProduct.chaiGuruObject(forKey: "c_id")
+                
+                if categoryID == productID{
+                   arrOfObjects.add(dictProduct)
+                }
+            }
+            
+            mutableDict.setValue(arrOfObjects, forKey: categoryName)
+        
+            arrayofDictProductObjects.add(mutableDict)
+            
+        }
+        
+      
+        
+        DispatchQueue.main.async {
+            self.listOfTableView.reloadData()
+        }
+        
+        
+        
+    }
+    
+    
+    
     
 
     /*
@@ -49,13 +153,24 @@ extension HomeViewController : UICollectionViewDelegate,UICollectionViewDataSour
     
 }
 
-extension HomeViewController : UITableViewDelegate,UITableViewDataSource{
+extension HomeViewController : UITableViewDelegate,UITableViewDataSource, NavigateToProductDetails{
+    
+    func showProductItemDetails() {
+        
+        let navigateProdDetail = self.storyboard?.instantiateViewController(withIdentifier: "ChaiGuruDetailsViewController") as! ChaiGuruDetailsViewController
+        
+        self.navigationController?.pushViewController(navigateProdDetail, animated: true)
+    }
+    
+    
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 3
+        return arrayofDictProductObjects.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        
         return 1
     }
     
@@ -63,9 +178,19 @@ extension HomeViewController : UITableViewDelegate,UITableViewDataSource{
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "TypesOfProductItemsTableViewCell", for: indexPath) as! TypesOfProductItemsTableViewCell
         
-        cell.getDataFromHomeScreen(indexpath: indexPath)
+        let arrOfDict = arrayofDictProductObjects[indexPath.section] as! NSDictionary
+        let dictCategory = arrayOfCategories![indexPath.section] as! NSDictionary
+        let categoryName = dictCategory.chaiGuruObject(forKey: "c_name")
         
-        cell.productItemsCollectionView.reloadData()
+        
+        let arrOfAllValues = arrOfDict.value(forKey: categoryName) as! NSMutableArray
+        
+        
+        cell.getDataFromHomeScreen(arrayOfProducts: arrOfAllValues)
+        
+        cell.delegateObj = self
+        
+       // cell.productItemsCollectionView.reloadData()
         
         
         return cell
@@ -81,6 +206,10 @@ extension HomeViewController : UITableViewDelegate,UITableViewDataSource{
         
         viewHeader.btnOfViewAll.addTarget(self, action: #selector(viewAllBtnTapped(_:)), for: .touchUpInside)
         
+        let dictCategory = arrayOfCategories![section] as! NSDictionary
+        let categoryName = dictCategory.chaiGuruObject(forKey: "c_name")
+        
+        viewHeader.lblOfProduct.text = categoryName
         
         return viewHeader
         

@@ -7,6 +7,11 @@
 //
 
 import UIKit
+import SDWebImage
+
+protocol NavigateToProductDetails : class {
+    func showProductItemDetails()
+}
 
 class TypesOfProductItemsTableViewCell: UITableViewCell {
 
@@ -14,7 +19,9 @@ class TypesOfProductItemsTableViewCell: UITableViewCell {
     
     var isCheckBtnAdd = false
     
-    var indexpathObj = IndexPath()
+    var arrOfCollectioViewProductData = NSMutableArray()
+    
+    weak var delegateObj : NavigateToProductDetails!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -28,10 +35,14 @@ class TypesOfProductItemsTableViewCell: UITableViewCell {
     }
     
     
-    func getDataFromHomeScreen(indexpath : IndexPath){
+    func getDataFromHomeScreen(arrayOfProducts : NSMutableArray){
+
+       arrOfCollectioViewProductData.removeAllObjects()
         
-        print("CellStyle",indexpath)
+       arrOfCollectioViewProductData = arrayOfProducts
         
+        
+        productItemsCollectionView.reloadData()
     }
     
     
@@ -45,7 +56,7 @@ extension TypesOfProductItemsTableViewCell : UICollectionViewDataSource,UICollec
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
+        return arrOfCollectioViewProductData.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -56,47 +67,57 @@ extension TypesOfProductItemsTableViewCell : UICollectionViewDataSource,UICollec
         
         collectionCell.btnOfAdd.addTarget(self, action: #selector(btnOfAdd(_:)), for: .touchUpInside)
         
-        collectionCell.btnOfAdd.tag = indexPath.row
+        let dictProductData = arrOfCollectioViewProductData[indexPath.row] as! NSDictionary
         
-      
-        if isCheckBtnAdd == false{
+        collectionCell.lblOfProductName.text = dictProductData.chaiGuruObject(forKey: "p_name")
+        collectionCell.lblOfProductCost.text = "₹" + dictProductData.chaiGuruObject(forKey: "p_price")
+        
+        
+        DispatchQueue.main.async {
             
-           
+            let img = dictProductData.chaiGuruObject(forKey: "img")
+            let constructOfImage = "http://3.1.5.235/assets/templateassets/images/chaiguru/boxes/"
             
-            collectionCell.viewOfAdd.isHidden = false
-            collectionCell.viewOfPlusandMinus.isHidden = true
+            let finalImage = constructOfImage + img
             
+            let url = URL.init(string: finalImage)
             
-        }else{
+            let data = try? Data(contentsOf: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
             
-            isCheckBtnAdd = false
-         
-            collectionCell.viewOfAdd.isHidden = true
-            collectionCell.viewOfPlusandMinus.isHidden = false
+            collectionCell.imgOfCollections.image = UIImage.init(data: data!)
+            
+//          collectionCell.imgOfCollections.sd_setImage(with: url, placeholderImage: UIImage())
             
         }
         
-        
+       
         
         return collectionCell
     }
     
     
     @objc func btnOfAdd(_ sender : Any){
+//
+//        print("collection",sender)
+//
+//      //  indexpathObj.row = (sender as AnyObject).tag
+//
+//       isCheckBtnAdd = true
+//
+//        productItemsCollectionView.reloadData()
         
-        print("collection",sender)
+        if delegateObj != nil{
+            self.delegateObj.showProductItemDetails()
+        }
         
-        indexpathObj.row = (sender as AnyObject).tag
         
-       isCheckBtnAdd = true
         
-        productItemsCollectionView.reloadData()
         
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-//        print("collection",indexPath)
+
         
     }
     
