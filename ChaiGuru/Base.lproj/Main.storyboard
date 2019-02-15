@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="m4h-UC-n2N">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="TPK-Eq-ucw">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -173,7 +173,7 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Today Deal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8AN-0e-N0Q">
-                                                            <rect key="frame" x="16" y="12" width="104" height="25"/>
+                                                            <rect key="frame" x="16" y="12" width="89.5" height="25"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="25" id="Zci-8L-3wo"/>
                                                             </constraints>
@@ -266,13 +266,13 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Regional Tea’s" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kJB-Di-SSb">
-                                                            <rect key="frame" x="16" y="20.5" width="132.5" height="22"/>
+                                                            <rect key="frame" x="16" y="21" width="116" height="21"/>
                                                             <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="18"/>
                                                             <color key="textColor" red="0.21176470588235294" green="0.21176470588235294" blue="0.21176470588235294" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1ay-vB-nne">
-                                                            <rect key="frame" x="302" y="16.5" width="57" height="30"/>
+                                                            <rect key="frame" x="310" y="17" width="49" height="29"/>
                                                             <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="14"/>
                                                             <state key="normal" title="View All">
                                                                 <color key="titleColor" red="0.61960784310000006" green="0.61960784310000006" blue="0.61960784310000006" alpha="1" colorSpace="calibratedRGB"/>
@@ -335,7 +335,7 @@
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="₹120.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Ot-Aj-KzI">
-                                                                                <rect key="frame" x="0.0" y="149" width="50" height="21"/>
+                                                                                <rect key="frame" x="0.0" y="149" width="47" height="21"/>
                                                                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="13"/>
                                                                                 <color key="textColor" red="0.21176470589999999" green="0.21176470589999999" blue="0.21176470589999999" alpha="1" colorSpace="calibratedRGB"/>
                                                                                 <nil key="highlightedColor"/>
@@ -800,7 +800,7 @@
                                                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                     </collectionViewFlowLayout>
                                                     <cells>
-                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="NuE-4D-HSe">
+                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ChaiDetaSlideImagesCollectionViewCell" id="NuE-4D-HSe" customClass="ChaiDetaSlideImagesCollectionViewCell" customModule="ChaiGuru" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="0.0" width="375" height="180"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -818,6 +818,9 @@
                                                                 <constraint firstItem="hhc-0I-M3n" firstAttribute="top" secondItem="NuE-4D-HSe" secondAttribute="top" id="bj7-bs-gHQ"/>
                                                                 <constraint firstAttribute="trailing" secondItem="hhc-0I-M3n" secondAttribute="trailing" id="jgk-ew-OmG"/>
                                                             </constraints>
+                                                            <connections>
+                                                                <outlet property="imgOfCollectionData" destination="hhc-0I-M3n" id="9Q4-7P-rea"/>
+                                                            </connections>
                                                         </collectionViewCell>
                                                     </cells>
                                                     <connections>
@@ -846,7 +849,7 @@
                                                     <state key="normal" title="Button"/>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="₹120.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bw0-yp-Khk">
-                                                    <rect key="frame" x="16" y="223" width="67" height="40"/>
+                                                    <rect key="frame" x="16" y="223" width="61" height="40"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="40" id="6bq-jf-2qZ"/>
                                                     </constraints>
@@ -891,7 +894,7 @@
                                             <outlet property="pageControl" destination="45J-10-uhx" id="vls-xW-iRr"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="taDescrbtionsTableViewCell" rowHeight="100" id="hqh-9B-wCL" customClass="ChaiDetaDescrbtionsTableViewCell" customModule="ChaiGuru" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChaiDetaDescrbtionsTableViewCell" rowHeight="100" id="hqh-9B-wCL" customClass="ChaiDetaDescrbtionsTableViewCell" customModule="ChaiGuru" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="298" width="375" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hqh-9B-wCL" id="aSr-vI-Teg">
@@ -937,11 +940,12 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="lblOfBottomLine" destination="Ozm-WS-ksq" id="Khm-SB-cKp"/>
                                             <outlet property="lblOfExplana" destination="1Wj-Nb-toH" id="H4w-fJ-Sje"/>
                                             <outlet property="lblOfProductDescr" destination="lbg-hF-glQ" id="wjc-TI-YDh"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="147" id="3sN-oX-xu9">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChaiDetaIngrediantsImagesTableViewCell" rowHeight="147" id="3sN-oX-xu9" customClass="ChaiDetaIngrediantsImagesTableViewCell" customModule="ChaiGuru" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="398" width="375" height="147"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3sN-oX-xu9" id="W8o-jB-kUW">
@@ -1045,8 +1049,11 @@
                                                 <constraint firstItem="Cjz-Vp-EQp" firstAttribute="top" secondItem="0rI-WB-iJz" secondAttribute="bottom" constant="8" id="zPY-wx-kQt"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="lblOfWaterQuantity" destination="IIc-9l-Qzo" id="qVo-vt-pXd"/>
+                                        </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="60" id="5aa-jV-CRb">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChaiProductDetailsSectionTableViewCell" rowHeight="60" id="5aa-jV-CRb" customClass="ChaiProductDetailsSectionTableViewCell" customModule="ChaiGuru" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="545" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5aa-jV-CRb" id="11L-kq-Xr9">
@@ -1097,8 +1104,13 @@
                                                 <constraint firstAttribute="bottom" secondItem="OQJ-dL-3L9" secondAttribute="bottom" id="hBJ-R6-hWk"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="imgOfProductOpen" destination="EPy-LL-Yka" id="8Hm-Fd-z1X"/>
+                                            <outlet property="lblOfBottomLine" destination="Dau-CJ-gps" id="lhs-G3-xHa"/>
+                                            <outlet property="lblOfProdDescTitles" destination="tRI-c8-aEB" id="cpK-X8-RrZ"/>
+                                        </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="JhL-kE-Zpy">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChaiProductDetailsRowTableViewCell" id="JhL-kE-Zpy" customClass="ChaiProductDetailsRowTableViewCell" customModule="ChaiGuru" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="605" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="JhL-kE-Zpy" id="bUv-et-mn8">
@@ -1132,8 +1144,15 @@
                                                 <constraint firstItem="VSA-dB-S1Q" firstAttribute="top" secondItem="bUv-et-mn8" secondAttribute="top" id="lpP-M5-T60"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="lblOfProductDetailExplanaton" destination="VSA-dB-S1Q" id="hyT-Lo-SoJ"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="TPK-Eq-ucw" id="yS7-uz-56K"/>
+                                    <outlet property="delegate" destination="TPK-Eq-ucw" id="gSm-KW-InH"/>
+                                </connections>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fPr-Mv-r8V">
                                 <rect key="frame" x="0.0" y="587" width="375" height="80"/>
@@ -1237,6 +1256,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="R2g-rt-xan"/>
                     </view>
+                    <connections>
+                        <outlet property="tbOfProductDetails" destination="BCq-uU-Vav" id="DaI-Ll-TV6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UL6-cG-JoT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

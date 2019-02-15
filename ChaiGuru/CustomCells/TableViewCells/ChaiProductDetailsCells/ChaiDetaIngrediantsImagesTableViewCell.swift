@@ -10,6 +10,8 @@ import UIKit
 
 class ChaiDetaIngrediantsImagesTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var lblOfWaterQuantity : UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

@@ -13,6 +13,8 @@ class ChaiDetaDescrbtionsTableViewCell: UITableViewCell {
     @IBOutlet weak var lblOfProductDescr : UILabel!
     @IBOutlet weak var lblOfExplana : UILabel!
     
+    @IBOutlet weak var lblOfBottomLine : UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

@@ -31,3 +31,30 @@ class ChaiDetProductItemsImagesTableViewCell: UITableViewCell {
     }
 
 }
+
+extension ChaiDetProductItemsImagesTableViewCell : UICollectionViewDelegate,UICollectionViewDataSource{
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 3
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ChaiDetaSlideImagesCollectionViewCell", for: indexPath) as! ChaiDetaSlideImagesCollectionViewCell
+        
+        if indexPath.row == 0{
+          cell.imgOfCollectionData.backgroundColor = .green
+        }else if indexPath.row == 1{
+            cell.imgOfCollectionData.backgroundColor = .blue
+        }else {
+            cell.imgOfCollectionData.backgroundColor = .black
+        }
+        
+        return cell
+    }
+    
+}

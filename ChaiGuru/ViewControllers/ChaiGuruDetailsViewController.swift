@@ -47,10 +47,79 @@ extension ChaiGuruDetailsViewController : UITableViewDelegate,UITableViewDataSou
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "", for: indexPath)
+        if indexPath.section == 4 || indexPath.section == 5 || indexPath.section == 6{
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ChaiProductDetailsRowTableViewCell", for: indexPath) as! ChaiProductDetailsRowTableViewCell
+            
+            cell.lblOfProductDetailExplanaton.text = "explanation"
+            
+            return cell
+        }
         
-        
-        return cell
+       return UITableViewCell()
      }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        
+        if section == 0{
+            
+            let headerView = tableView.dequeueReusableCell(withIdentifier: "ChaiDetProductItemsImagesTableViewCell") as! ChaiDetProductItemsImagesTableViewCell
+            headerView.lblOfProductName.text = "ssd"
+            headerView.lblOfProductCost.text = "121"
+            
+            headerView.imgOfCollectionViews.reloadData()
+            return headerView
+        }else if section == 1 || section == 2{
+            
+            let headerView = tableView.dequeueReusableCell(withIdentifier: "ChaiDetaDescrbtionsTableViewCell") as! ChaiDetaDescrbtionsTableViewCell
+            headerView.lblOfProductDescr.text = "sdds"
+            
+            headerView.lblOfExplana.text = "hvsajhvasvffvghaghsagh"
+            return headerView
+            
+        }else if section == 3{
+            
+            let headerView = tableView.dequeueReusableCell(withIdentifier: "ChaiDetaIngrediantsImagesTableViewCell") as! ChaiDetaIngrediantsImagesTableViewCell
+            
+            headerView.lblOfWaterQuantity.text = "200g"
+            
+            return headerView
+            
+        }else{
+            
+            let headerView = tableView.dequeueReusableCell(withIdentifier: "ChaiProductDetailsSectionTableViewCell") as! ChaiProductDetailsSectionTableViewCell
+            
+            headerView.lblOfProdDescTitles.text = "aaa"
+            
+            return headerView
+            
+        }
+    }
+    
+    
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        
+        if section == 0{
+            return 270
+        }else if section == 1 || section == 2{
+            return 100
+        }else if section == 3{
+            return 150
+        }else{
+           return 60
+        }
+        
+        
+    }
+    
+    
+    
+    
+    
+    
     
 }

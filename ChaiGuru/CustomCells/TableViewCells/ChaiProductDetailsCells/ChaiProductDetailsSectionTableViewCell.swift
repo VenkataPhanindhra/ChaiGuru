@@ -10,6 +10,11 @@ import UIKit
 
 class ChaiProductDetailsSectionTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var lblOfProdDescTitles : UILabel!
+    @IBOutlet weak var imgOfProductOpen : UIImageView!
+    
+    @IBOutlet weak var lblOfBottomLine : UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

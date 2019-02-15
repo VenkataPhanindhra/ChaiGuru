@@ -10,6 +10,8 @@ import UIKit
 
 class ChaiProductDetailsRowTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var lblOfProductDetailExplanaton : UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

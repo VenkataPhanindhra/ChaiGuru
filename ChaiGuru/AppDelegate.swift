@@ -39,37 +39,35 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         self.window = UIWindow(frame: UIScreen.main.bounds)
-        
+
         let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let navigationController :UINavigationController!
         
-        //Testing
-//        UserDefaultStored.isLoggedIn = "0"
-        
+      
         
         if UserDefaultStored.isLoggedIn == "1"{
-            
+
            let initialViewController = storyboard.instantiateViewController(withIdentifier: "ChaiGuruTabBarViewController") as! ChaiGuruTabBarViewController
-            
+
             initialViewController.selectedIndex = 0
-            
+
             navigationController  = UINavigationController.init(rootViewController: initialViewController)
-            
+
         }else{
-            
+
            let initialViewController = storyboard.instantiateViewController(withIdentifier: "AboutViewController") as! AboutViewController
-            
+
             navigationController  = UINavigationController.init(rootViewController: initialViewController)
         }
-        
-        
-        
+
+
+
         navigationController.isNavigationBarHidden = true
-        
+
         self.window?.rootViewController = navigationController
-        
+
         self.window?.makeKeyAndVisible()
-        
+//
         return true
         
         
