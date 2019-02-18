@@ -52,6 +52,30 @@ class HomeViewController: UIViewController {
             DispatchQueue.main.async {
                 APIRequest.shareDInstance.hideProgreesHUD()
             }
+            
+            
+            //For testing to call api also here
+            
+            let dict = NSMutableDictionary()
+            dict.setValue("1", forKey: "cat_id")
+            dict.setValue("Regional Tea", forKey: "cat_name")
+            
+            let dict1 = NSMutableDictionary()
+            dict1.setValue("2", forKey: "cat_id")
+            dict1.setValue("Green Tea", forKey: "cat_name")
+            
+            let dict2 = NSMutableDictionary()
+            dict2.setValue("3", forKey: "cat_id")
+            dict2.setValue("Special Tea", forKey: "cat_name")
+            
+            
+            self.arrayOfCategories.add(dict)
+            self.arrayOfCategories.add(dict1)
+            self.arrayOfCategories.add(dict2)
+            
+             self.getAllProductData()
+            
+            
         }
         
         
@@ -91,13 +115,13 @@ class HomeViewController: UIViewController {
             let mutableDict  = NSMutableDictionary()
             
             let dictCategory = arrayOfCategories![indexObj] as! NSDictionary
-            let categoryID = dictCategory.chaiGuruObject(forKey: "c_id")
-            let categoryName = dictCategory.chaiGuruObject(forKey: "c_name")
+            let categoryID = dictCategory.chaiGuruObject(forKey: "cat_id")
+            let categoryName = dictCategory.chaiGuruObject(forKey: "cat_name")
             
             for indexObj in 0..<arrayOfAllProducts.count{
                 
                 let dictProduct = arrayOfAllProducts![indexObj] as! NSDictionary
-                let productID = dictProduct.chaiGuruObject(forKey: "c_id")
+                let productID = dictProduct.chaiGuruObject(forKey: "cat_id")
                 
                 if categoryID == productID{
                    arrOfObjects.add(dictProduct)
@@ -194,7 +218,7 @@ extension HomeViewController : UITableViewDelegate,UITableViewDataSource, Naviga
             
             let arrOfDict = arrayofDictProductObjects[indexSection] as! NSDictionary
             let dictCategory = arrayOfCategories![indexSection] as! NSDictionary
-            let categoryName = dictCategory.chaiGuruObject(forKey: "c_name")
+            let categoryName = dictCategory.chaiGuruObject(forKey: "cat_name")
             
             
             let arrOfAllValues = arrOfDict.value(forKey: categoryName) as! NSMutableArray
@@ -233,14 +257,19 @@ extension HomeViewController : UITableViewDelegate,UITableViewDataSource, Naviga
             
             let viewHeader = tableView.dequeueReusableCell(withIdentifier: "TypeOfProductNameTableViewCell") as! TypeOfProductNameTableViewCell
             
-            viewHeader.btnOfViewAll.addTarget(self, action: #selector(viewAllBtnTapped(_:)), for: .touchUpInside)
+          
             
             let indexSection = section - 1
             
             let dictCategory = arrayOfCategories![indexSection] as! NSDictionary
-            let categoryName = dictCategory.chaiGuruObject(forKey: "c_name")
+            let categoryName = dictCategory.chaiGuruObject(forKey: "cat_name")
             
             viewHeader.lblOfProduct.text = categoryName
+            
+            viewHeader.btnOfViewAll.tag = indexSection
+            
+            viewHeader.btnOfViewAll.addTarget(self, action: #selector(viewAllBtnTapped(_:)), for: .touchUpInside)
+            
             
             return viewHeader
             
@@ -261,11 +290,23 @@ extension HomeViewController : UITableViewDelegate,UITableViewDataSource, Naviga
         
     }
     
-    @objc func viewAllBtnTapped(_ sender : Any){
+    @objc func viewAllBtnTapped(_ sender : UIButton){
+        
+        let indexSection = sender.tag
+        
+        let arrOfDict = arrayofDictProductObjects[indexSection] as! NSDictionary
+        let dictCategory = arrayOfCategories![indexSection] as! NSDictionary
+        let categoryName = dictCategory.chaiGuruObject(forKey: "cat_name")
+        
+        
+        let arrOfAllValues = arrOfDict.value(forKey: categoryName) as! NSMutableArray
+        
         
         
         let viewAllVC = self.storyboard?.instantiateViewController(withIdentifier: "AllViewProductsViewController") as! AllViewProductsViewController
         
+        viewAllVC.arrOfAllProducts = arrOfAllValues
+        viewAllVC.strOfProductName = categoryName
         
         self.navigationController?.pushViewController(viewAllVC, animated: true)
     }

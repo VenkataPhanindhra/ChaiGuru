@@ -65,12 +65,12 @@ extension TypesOfProductItemsTableViewCell : UICollectionViewDataSource,UICollec
         
        
         
-        collectionCell.btnOfAdd.addTarget(self, action: #selector(btnOfAdd(_:)), for: .touchUpInside)
+      //  collectionCell.btnOfAdd.addTarget(self, action: #selector(btnOfAdd(_:)), for: .touchUpInside)
         
         let dictProductData = arrOfCollectioViewProductData[indexPath.row] as! NSDictionary
         
         collectionCell.lblOfProductName.text = dictProductData.chaiGuruObject(forKey: "p_name")
-        collectionCell.lblOfProductCost.text = "₹" + dictProductData.chaiGuruObject(forKey: "p_price")
+        collectionCell.lblOfProductCost.text = "₹ " + dictProductData.chaiGuruObject(forKey: "p_price")
         
         collectionCell.imgOfCollections.layer.cornerRadius = 8
         collectionCell.imgOfCollections.layer.masksToBounds = true
@@ -114,6 +114,16 @@ extension TypesOfProductItemsTableViewCell : UICollectionViewDataSource,UICollec
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
+        
+        let dictObj = arrOfCollectioViewProductData[indexPath.row] as! NSDictionary
+        
+        SingletonClass.sharedInstance.chaiGuruDetailsDict = dictObj
+        
+        
+        if delegateObj != nil{
+            self.delegateObj.showProductItemDetails()
+        }
+
 
         
     }

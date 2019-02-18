@@ -11,10 +11,19 @@ import UIKit
 class AllViewProductsViewController: UIViewController {
 
     @IBOutlet weak var allProductsCollectionview : UICollectionView!
+    @IBOutlet weak var lblOfproductTeaName : UILabel!
+    
+    
+    var arrOfAllProducts : NSMutableArray!
+    var strOfProductName : String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+       
+        lblOfproductTeaName.text = strOfProductName
+        
+        
         // Do any additional setup after loading the view.
     }
     
@@ -41,14 +50,37 @@ class AllViewProductsViewController: UIViewController {
 extension AllViewProductsViewController : UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return arrOfAllProducts.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TypesOfProductCollectionViewCell", for: indexPath) as! TypesOfProductCollectionViewCell
+        let collectionCell = collectionView.dequeueReusableCell(withReuseIdentifier: "TypesOfProductCollectionViewCell", for: indexPath) as! TypesOfProductCollectionViewCell
         
-        return cell
+        let dictProductData = arrOfAllProducts[indexPath.row] as! NSDictionary
+        
+        collectionCell.lblOfProductName.text = dictProductData.chaiGuruObject(forKey: "p_name")
+        collectionCell.lblOfProductCost.text = "₹" + dictProductData.chaiGuruObject(forKey: "p_price")
+        
+        collectionCell.imgOfCollections.layer.cornerRadius = 8
+        collectionCell.imgOfCollections.layer.masksToBounds = true
+        
+        
+        DispatchQueue.main.async {
+            
+            let img = dictProductData.chaiGuruObject(forKey: "img6")
+            let constructOfImage = "http://3.1.5.235/assets/templateassets/images/chaiguru/home/"
+            
+            let finalImage = constructOfImage + img
+            
+            collectionCell.imgOfCollections.sd_setImage(with: URL.init(string: finalImage), placeholderImage: UIImage.init(named: "LoginLogo"))
+            
+        }
+        
+        
+        
+        
+        return collectionCell
         
     }
     
@@ -58,6 +90,17 @@ extension AllViewProductsViewController : UICollectionViewDelegate,UICollectionV
         
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        
+        let dictObj = arrOfAllProducts[indexPath.row] as! NSDictionary
+        
+        SingletonClass.sharedInstance.chaiGuruDetailsDict = dictObj
+        
+        let navigateProdDetail = self.storyboard?.instantiateViewController(withIdentifier: "ChaiGuruDetailsViewController") as! ChaiGuruDetailsViewController
+        
+        self.navigationController?.pushViewController(navigateProdDetail, animated: true)
     
+    }
     
 }

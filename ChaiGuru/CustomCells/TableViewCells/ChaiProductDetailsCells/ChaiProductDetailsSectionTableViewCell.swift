@@ -15,6 +15,8 @@ class ChaiProductDetailsSectionTableViewCell: UITableViewCell {
     
     @IBOutlet weak var lblOfBottomLine : UILabel!
     
+    @IBOutlet weak var btnOfHeaderSection : UIButton!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

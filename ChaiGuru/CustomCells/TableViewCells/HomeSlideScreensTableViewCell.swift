@@ -12,6 +12,8 @@ class HomeSlideScreensTableViewCell: UITableViewCell {
 
     @IBOutlet weak var collectionOfSlidesView : UICollectionView!
     
+    var arrOfGetImages = NSMutableArray()
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -22,6 +24,16 @@ class HomeSlideScreensTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    func getImagesData(arrofImages : NSMutableArray){
+        
+        arrOfGetImages.removeAllObjects()
+        
+        arrOfGetImages.addObjects(from: arrofImages as! [Any])
+        
+        collectionOfSlidesView.reloadData()
+    }
+    
 
 }
 
@@ -38,13 +50,19 @@ extension HomeSlideScreensTableViewCell : UICollectionViewDelegate,UICollectionV
         cell.imgOfCollections.layer.cornerRadius = 8
         cell.imgOfCollections.layer.masksToBounds = true
         
-        if indexPath.row == 0{
-            cell.imgOfCollections.backgroundColor = UIColor.blue
-        }else if indexPath.row == 1{
-            cell.imgOfCollections.backgroundColor = UIColor.black
-        }else{
-            cell.imgOfCollections.backgroundColor = UIColor.orange
-        }
+        let constructOfImage = "http://3.1.5.235/assets/templateassets/images/chaiguru/home/greenteacup1.jpg"
+        
+        
+        
+        cell.imgOfCollections.sd_setImage(with: URL.init(string: constructOfImage), placeholderImage: UIImage.init(named: "LoginLogo"))
+        
+//        if indexPath.row == 0{
+//            cell.imgOfCollections.backgroundColor = UIColor.blue
+//        }else if indexPath.row == 1{
+//            cell.imgOfCollections.backgroundColor = UIColor.black
+//        }else{
+//            cell.imgOfCollections.backgroundColor = UIColor.orange
+//        }
         
         
         return cell

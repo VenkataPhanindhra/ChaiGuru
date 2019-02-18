@@ -19,6 +19,8 @@ class ChaiDetProductItemsImagesTableViewCell: UITableViewCell {
     @IBOutlet weak var btnOfFavorite : UIButton!
     
     
+    var arrOfAllImages = NSMutableArray()
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -29,6 +31,24 @@ class ChaiDetProductItemsImagesTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    func getAllProductImages(arrOfImages : [String]){
+        
+        
+        
+        
+        arrOfAllImages.removeAllObjects()
+        
+        arrOfAllImages.addObjects(from: arrOfImages as [String])
+        
+        pageControl.numberOfPages = arrOfImages.count
+        
+        imgOfCollectionViews.reloadData()
+        
+        
+    }
+    
+    
 
 }
 
@@ -39,22 +59,44 @@ extension ChaiDetProductItemsImagesTableViewCell : UICollectionViewDelegate,UICo
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return arrOfAllImages.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ChaiDetaSlideImagesCollectionViewCell", for: indexPath) as! ChaiDetaSlideImagesCollectionViewCell
         
-        if indexPath.row == 0{
-          cell.imgOfCollectionData.backgroundColor = .green
-        }else if indexPath.row == 1{
-            cell.imgOfCollectionData.backgroundColor = .blue
-        }else {
-            cell.imgOfCollectionData.backgroundColor = .black
-        }
+        let image = "http://3.1.5.235/assets/templateassets/images/chaiguru/boxes/"
+        
+        let constructedImage = arrOfAllImages[indexPath.row] as! String
+        
+        let finaleImage = image + constructedImage
+        
+        let url = URL.init(string: finaleImage)
+        
+        cell.imgOfCollectionData.sd_setImage(with: url, completed: nil)
+        
+  
         
         return cell
     }
+    
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        
+        
+        for case let SelectedCell as ChaiDetaSlideImagesCollectionViewCell in imgOfCollectionViews.visibleCells{
+            
+            let indexpath = imgOfCollectionViews.indexPath(for: SelectedCell)
+            
+            pageControl.currentPage = (indexpath?.row)!
+            
+        }
+        
+        
+        
+    }
+    
+    
     
 }
