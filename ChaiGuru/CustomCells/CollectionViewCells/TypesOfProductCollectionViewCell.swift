@@ -22,4 +22,13 @@ class TypesOfProductCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var minusBtn : UIButton!
     @IBOutlet weak var lblOfTotalItems : UILabel!
     
+    var tableViewIndexPath : IndexPath!
+    
+    @IBAction func addBtnClicked(_ sender : UIButton){
+        
+//        print(tableViewIndexPath)
+        
+    }
+    
+    
 }

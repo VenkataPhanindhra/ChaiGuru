@@ -47,4 +47,6 @@ class SingletonClass{
     var isCheckAddBtnClicked : Bool = false
     var chaiGuruDetailsDict : NSDictionary!
     
+    var ChaiGuruProductItemLists = NSMutableArray()
+    
 }

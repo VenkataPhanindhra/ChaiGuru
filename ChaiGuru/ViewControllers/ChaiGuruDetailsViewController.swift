@@ -13,6 +13,9 @@ class ChaiGuruDetailsViewController: UIViewController {
     @IBOutlet weak var tbOfProductDetails : UITableView!
     @IBOutlet weak var viewOfBackgroundColor : UIView!
     
+    @IBOutlet weak var lblOfTitle : UILabel!
+    
+    
     var indexPathSection : Int! = -1
     
     override func viewDidLoad() {
@@ -88,6 +91,7 @@ extension ChaiGuruDetailsViewController : UITableViewDelegate,UITableViewDataSou
                 cell.lblOfProductDetailExplanaton.text = "Reviewssssssss Data to Show"
             }
             
+            cell.selectionStyle = .none
             
             return cell
         }

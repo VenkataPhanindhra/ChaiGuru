@@ -9,6 +9,7 @@
 import UIKit
 import SDWebImage
 
+
 protocol NavigateToProductDetails : class {
     func showProductItemDetails()
 }
@@ -63,9 +64,12 @@ extension TypesOfProductItemsTableViewCell : UICollectionViewDataSource,UICollec
         
         let collectionCell = collectionView.dequeueReusableCell(withReuseIdentifier: "TypesOfProductCollectionViewCell", for: indexPath) as! TypesOfProductCollectionViewCell
         
-       
+       //collectionCell.tableViewIndexPath = indexPath
         
-      //  collectionCell.btnOfAdd.addTarget(self, action: #selector(btnOfAdd(_:)), for: .touchUpInside)
+        collectionCell.btnOfAdd.tag = indexPath.row
+        collectionCell.btnOfAdd.addTarget(self, action: #selector(btnOfAdd(_:)), for: .touchUpInside)
+        
+        
         
         let dictProductData = arrOfCollectioViewProductData[indexPath.row] as! NSDictionary
         
@@ -88,26 +92,30 @@ extension TypesOfProductItemsTableViewCell : UICollectionViewDataSource,UICollec
         }
         
        
+        if SingletonClass.sharedInstance.ChaiGuruProductItemLists.contains(dictProductData){
+           
+            collectionCell.viewOfAdd.isHidden = true
+            
+        }else{
+            
+           collectionCell.viewOfAdd.isHidden = false
+            
+        }
+        
+        
         
         return collectionCell
     }
     
     
-    @objc func btnOfAdd(_ sender : Any){
-//
-//        print("collection",sender)
-//
-//      //  indexpathObj.row = (sender as AnyObject).tag
-//
-//       isCheckBtnAdd = true
-//
-//        productItemsCollectionView.reloadData()
+    @objc func btnOfAdd(_ sender : UIButton){
+
+
+        let dictProductData = arrOfCollectioViewProductData[sender.tag] as! NSDictionary
         
-        if delegateObj != nil{
-            self.delegateObj.showProductItemDetails()
-        }
+        SingletonClass.sharedInstance.ChaiGuruProductItemLists.add(dictProductData)
         
-        
+        productItemsCollectionView.reloadData()
         
         
     }
@@ -120,11 +128,13 @@ extension TypesOfProductItemsTableViewCell : UICollectionViewDataSource,UICollec
         SingletonClass.sharedInstance.chaiGuruDetailsDict = dictObj
         
         
+        
+        
         if delegateObj != nil{
             self.delegateObj.showProductItemDetails()
         }
 
-
+        
         
     }
     

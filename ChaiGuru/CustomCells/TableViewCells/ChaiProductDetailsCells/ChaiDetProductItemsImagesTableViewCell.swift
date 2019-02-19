@@ -66,15 +66,23 @@ extension ChaiDetProductItemsImagesTableViewCell : UICollectionViewDelegate,UICo
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ChaiDetaSlideImagesCollectionViewCell", for: indexPath) as! ChaiDetaSlideImagesCollectionViewCell
         
-        let image = "http://3.1.5.235/assets/templateassets/images/chaiguru/boxes/"
+      
+        DispatchQueue.main.async {
+            
+            let image = "http://3.1.5.235/assets/templateassets/images/chaiguru/boxes/"
+            
+            let constructedImage = self.arrOfAllImages[indexPath.row] as! String
+            
+            let finaleImage = image + constructedImage
+            
+            let url = URL.init(string: finaleImage)
+            
+            cell.imgOfCollectionData.sd_setImage(with: url, completed: nil)
+            
+            
+        }
         
-        let constructedImage = arrOfAllImages[indexPath.row] as! String
         
-        let finaleImage = image + constructedImage
-        
-        let url = URL.init(string: finaleImage)
-        
-        cell.imgOfCollectionData.sd_setImage(with: url, completed: nil)
         
   
         

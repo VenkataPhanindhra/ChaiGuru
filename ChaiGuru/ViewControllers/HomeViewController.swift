@@ -207,6 +207,8 @@ extension HomeViewController : UITableViewDelegate,UITableViewDataSource, Naviga
             
             cell.collectionOfSlidesView.reloadData()
             
+            cell.selectionStyle = .none
+            
             return cell
             
             
@@ -227,6 +229,8 @@ extension HomeViewController : UITableViewDelegate,UITableViewDataSource, Naviga
             cell.getDataFromHomeScreen(arrayOfProducts: arrOfAllValues)
             
             cell.delegateObj = self
+            
+            cell.selectionStyle = .none
             
             return cell
             
