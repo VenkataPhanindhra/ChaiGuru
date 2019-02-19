@@ -8,4 +8,9 @@ target 'ChaiGuru' do
   # Pods for ChaiGuru
 pod 'MaterialTextField'
 pod 'SDWebImage'
+
+
+#pod 'Fabric'
+#pod 'Crashlytics'
+
 end
