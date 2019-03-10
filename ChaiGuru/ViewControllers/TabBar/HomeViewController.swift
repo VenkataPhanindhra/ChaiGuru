@@ -10,12 +10,13 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
-    @IBOutlet weak var slideCollectionView : UICollectionView!
     @IBOutlet weak var listOfTableView : UITableView!
     
     var arrayOfCategories : NSMutableArray!
     var arrayOfAllProducts : NSMutableArray!
     var arrayofDictProductObjects : NSMutableArray!
+    
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +32,8 @@ class HomeViewController: UIViewController {
         
         // Do any additional setup after loading the view.
     }
+    
+    
     
     
     func getCategoryTypes(){
@@ -91,7 +94,15 @@ class HomeViewController: UIViewController {
             DispatchQueue.main.async {
                 APIRequest.shareDInstance.hideProgreesHUD()
             }
+            
+            
+            let delegateApp  = UIApplication.shared.delegate as! AppDelegate
+            delegateApp.arrOfAllProducts.removeAllObjects()
+            
+            delegateApp.arrOfAllProducts.addObjects(from: dataResponse as! [Any])
         
+            self.arrayOfAllProducts.removeAllObjects()
+            
             self.arrayOfAllProducts.addObjects(from: dataResponse as! [Any])
             
             self.devideDifferentCategoriesOfproductDataTypes()

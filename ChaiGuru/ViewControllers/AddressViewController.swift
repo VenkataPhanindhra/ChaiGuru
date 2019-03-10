@@ -1,14 +1,14 @@
 //
-//  CartViewController.swift
+//  AddressViewController.swift
 //  ChaiGuru
 //
-//  Created by phanindhra on 2/7/19.
+//  Created by phanindhra on 3/10/19.
 //  Copyright © 2019 phanindhra. All rights reserved.
 //
 
 import UIKit
 
-class CartViewController: UIViewController {
+class AddressViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
