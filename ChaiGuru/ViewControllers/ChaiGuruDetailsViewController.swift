@@ -14,13 +14,17 @@ class ChaiGuruDetailsViewController: UIViewController {
     @IBOutlet weak var viewOfBackgroundColor : UIView!
     
     @IBOutlet weak var lblOfTitle : UILabel!
-    
-    
     var indexPathSection : Int! = -1
+    
+    var singTonObj : SingletonClass!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        singTonObj = SingletonClass.sharedInstance
+        
+        lblOfTitle.text = singTonObj.chaiGuruDetailsDict.chaiGuruObject(forKey: "p_name")
+        
         
     }
     
@@ -84,9 +88,9 @@ extension ChaiGuruDetailsViewController : UITableViewDelegate,UITableViewDataSou
             
            
             if indexPath.section == 4{
-                cell.lblOfProductDetailExplanaton.text = SingletonClass.sharedInstance.chaiGuruDetailsDict.chaiGuruObject(forKey: "p_usage")
+                cell.lblOfProductDetailExplanaton.text = singTonObj.chaiGuruDetailsDict.chaiGuruObject(forKey: "p_usage")
             }else if indexPath.section == 5{
-                cell.lblOfProductDetailExplanaton.text = SingletonClass.sharedInstance.chaiGuruDetailsDict.chaiGuruObject(forKey: "p_benefits")
+                cell.lblOfProductDetailExplanaton.text = singTonObj.chaiGuruDetailsDict.chaiGuruObject(forKey: "p_benefits")
             }else if indexPath.section == 6{
                 cell.lblOfProductDetailExplanaton.text = "Reviewssssssss Data to Show"
             }
@@ -105,16 +109,16 @@ extension ChaiGuruDetailsViewController : UITableViewDelegate,UITableViewDataSou
             
             let headerView = tableView.dequeueReusableCell(withIdentifier: "ChaiDetProductItemsImagesTableViewCell") as! ChaiDetProductItemsImagesTableViewCell
             
-            headerView.lblOfProductName.text = SingletonClass.sharedInstance.chaiGuruDetailsDict.chaiGuruObject(forKey: "p_name")
-            headerView.lblOfProductCost.text = "₹ " + SingletonClass.sharedInstance.chaiGuruDetailsDict.chaiGuruObject(forKey: "p_price")
+            headerView.lblOfProductName.text = singTonObj.chaiGuruDetailsDict.chaiGuruObject(forKey: "p_name")
+            headerView.lblOfProductCost.text = "₹ " + singTonObj.chaiGuruDetailsDict.chaiGuruObject(forKey: "p_price")
             
             var arrOfImage = [String]()
             
-            let img = SingletonClass.sharedInstance.chaiGuruDetailsDict.chaiGuruObject(forKey: "img")
-            let img2 = SingletonClass.sharedInstance.chaiGuruDetailsDict.chaiGuruObject(forKey: "img2")
-            let img3 = SingletonClass.sharedInstance.chaiGuruDetailsDict.chaiGuruObject(forKey: "img3")
-            let img4 = SingletonClass.sharedInstance.chaiGuruDetailsDict.chaiGuruObject(forKey: "img4")
-            let img5 = SingletonClass.sharedInstance.chaiGuruDetailsDict.chaiGuruObject(forKey: "img5")
+            let img = singTonObj.chaiGuruDetailsDict.chaiGuruObject(forKey: "img")
+            let img2 = singTonObj.chaiGuruDetailsDict.chaiGuruObject(forKey: "img2")
+            let img3 = singTonObj.chaiGuruDetailsDict.chaiGuruObject(forKey: "img3")
+            let img4 = singTonObj.chaiGuruDetailsDict.chaiGuruObject(forKey: "img4")
+            let img5 = singTonObj.chaiGuruDetailsDict.chaiGuruObject(forKey: "img5")
             
             arrOfImage.append(img)
             arrOfImage.append(img2)
@@ -136,7 +140,7 @@ extension ChaiGuruDetailsViewController : UITableViewDelegate,UITableViewDataSou
                 
                 headerView.lblOfProductDescr.text = "Description"
                 
-                headerView.lblOfExplana.text = SingletonClass.sharedInstance.chaiGuruDetailsDict.chaiGuruObject(forKey: "p_description")
+                headerView.lblOfExplana.text = singTonObj.chaiGuruDetailsDict.chaiGuruObject(forKey: "p_description")
                 
                 headerView.lblOfBottomLine.isHidden = true
                 
@@ -144,7 +148,7 @@ extension ChaiGuruDetailsViewController : UITableViewDelegate,UITableViewDataSou
                 
                 headerView.lblOfProductDescr.text = "Ingredients:"
                 
-                headerView.lblOfExplana.text = SingletonClass.sharedInstance.chaiGuruDetailsDict.chaiGuruObject(forKey: "ingredients")
+                headerView.lblOfExplana.text = singTonObj.chaiGuruDetailsDict.chaiGuruObject(forKey: "ingredients")
                 
                 headerView.lblOfBottomLine.isHidden = false
             }
@@ -157,7 +161,7 @@ extension ChaiGuruDetailsViewController : UITableViewDelegate,UITableViewDataSou
             
             let headerView = tableView.dequeueReusableCell(withIdentifier: "ChaiDetaIngrediantsImagesTableViewCell") as! ChaiDetaIngrediantsImagesTableViewCell
             
-            headerView.lblOfWaterQuantity.text = SingletonClass.sharedInstance.chaiGuruDetailsDict.chaiGuruObject(forKey: "p_weight")
+            headerView.lblOfWaterQuantity.text = singTonObj.chaiGuruDetailsDict.chaiGuruObject(forKey: "p_weight")
             
             return headerView
             
@@ -224,23 +228,23 @@ extension ChaiGuruDetailsViewController : UITableViewDelegate,UITableViewDataSou
             
             if section == 1{
                 
-                let text  = SingletonClass.sharedInstance.chaiGuruDetailsDict.chaiGuruObject(forKey: "p_description")
+                let text  = singTonObj.chaiGuruDetailsDict.chaiGuruObject(forKey: "p_description")
                 let font = UIFont(name: "Montserrat-Regular", size: 16.0)
                 let width = self.view.frame.width - 32
                 
                 let height = heightForView(text: text, font: font!, width: width)
                 
-                return height + 85
+                return height + 50
                 
             }else{
                 
-                let text  = SingletonClass.sharedInstance.chaiGuruDetailsDict.chaiGuruObject(forKey: "ingredients")
+                let text  = singTonObj.chaiGuruDetailsDict.chaiGuruObject(forKey: "ingredients")
                 let font = UIFont(name: "Montserrat-Regular", size: 16.0)
                 let width = self.view.frame.width - 32
                 
                 let height = heightForView(text: text, font: font!, width: width)
                 
-                return height + 85
+                return height + 50
                 
             }
             
@@ -259,21 +263,7 @@ extension ChaiGuruDetailsViewController : UITableViewDelegate,UITableViewDataSou
     
     
     
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        
-        //let height = scrollView.frame.size.height
-        let contentYoffset = scrollView.contentOffset.y
-        
-        if contentYoffset > 250{
-            
-            viewOfBackgroundColor.backgroundColor = .white
-            
-        }else{
-            viewOfBackgroundColor.backgroundColor = .clear
-        }
-        
-        
-    }
+   
     
     
     

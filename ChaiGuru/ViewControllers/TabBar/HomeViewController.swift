@@ -8,6 +8,18 @@
 
 import UIKit
 
+
+
+struct ProductItemsAddedToCart {
+    
+    var NoOfItems : Int! = 0
+    var TotalCost : String! = ""
+    var ItemName : String! = ""
+    var ItemProductId : String! = ""
+    var ItemEachCost : String! = ""
+    
+}
+
 class HomeViewController: UIViewController {
 
     @IBOutlet weak var listOfTableView : UITableView!
@@ -52,6 +64,7 @@ class HomeViewController: UIViewController {
             
             
         }) { (statusCode) in
+            
             DispatchQueue.main.async {
                 APIRequest.shareDInstance.hideProgreesHUD()
             }
@@ -95,11 +108,15 @@ class HomeViewController: UIViewController {
                 APIRequest.shareDInstance.hideProgreesHUD()
             }
             
+          
+            DispatchQueue.main.async {
+                let delegateApp  = UIApplication.shared.delegate as! AppDelegate
+                delegateApp.arrOfAllProducts.removeAllObjects()
+                
+                delegateApp.arrOfAllProducts.addObjects(from: dataResponse as! [Any])
+            }
             
-            let delegateApp  = UIApplication.shared.delegate as! AppDelegate
-            delegateApp.arrOfAllProducts.removeAllObjects()
-            
-            delegateApp.arrOfAllProducts.addObjects(from: dataResponse as! [Any])
+           
         
             self.arrayOfAllProducts.removeAllObjects()
             

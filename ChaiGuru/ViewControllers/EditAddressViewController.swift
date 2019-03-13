@@ -1,14 +1,14 @@
 //
-//  AddressViewController.swift
+//  EditAddressViewController.swift
 //  ChaiGuru
 //
-//  Created by phanindhra on 3/10/19.
+//  Created by phanindhra on 3/13/19.
 //  Copyright © 2019 phanindhra. All rights reserved.
 //
 
 import UIKit
 
-class AddressViewController: UIViewController {
+class EditAddressViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

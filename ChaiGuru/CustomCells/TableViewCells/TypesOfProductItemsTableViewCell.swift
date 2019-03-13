@@ -24,8 +24,13 @@ class TypesOfProductItemsTableViewCell: UITableViewCell {
     
     weak var delegateObj : NavigateToProductDetails!
     
+    var singletonObj : SingletonClass!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        singletonObj = SingletonClass.sharedInstance
+        
         // Initialization code
     }
 
@@ -80,6 +85,7 @@ extension TypesOfProductItemsTableViewCell : UICollectionViewDataSource,UICollec
         collectionCell.imgOfCollections.layer.masksToBounds = true
         
         
+        
         DispatchQueue.main.async {
             
             let img = dictProductData.chaiGuruObject(forKey: "img6")
@@ -91,15 +97,21 @@ extension TypesOfProductItemsTableViewCell : UICollectionViewDataSource,UICollec
             
         }
         
+        
+        collectionCell.plusBtn.addTarget(self, action: #selector(incrementButtonClicked(_:)), for: .touchUpInside)
+        collectionCell.minusBtn.addTarget(self, action: #selector(decrementBtnClicked(_:)), for: .touchUpInside)
+        
+        
+        
        
-        if SingletonClass.sharedInstance.ChaiGuruProductItemLists.contains(dictProductData){
-           
+        if singletonObj.ChaiGuruProductItemLists.contains(dictProductData){
+
             collectionCell.viewOfAdd.isHidden = true
-            
+        
         }else{
-            
+
            collectionCell.viewOfAdd.isHidden = false
-            
+
         }
         
         
@@ -110,10 +122,22 @@ extension TypesOfProductItemsTableViewCell : UICollectionViewDataSource,UICollec
     
     @objc func btnOfAdd(_ sender : UIButton){
 
+      
 
+        
         let dictProductData = arrOfCollectioViewProductData[sender.tag] as! NSDictionary
         
-        SingletonClass.sharedInstance.ChaiGuruProductItemLists.add(dictProductData)
+        singletonObj.ChaiGuruProductItemLists.add(dictProductData)
+        
+        
+        var productsCartLists = ProductItemsAddedToCart()
+        productsCartLists.NoOfItems = 1
+        productsCartLists.ItemEachCost = dictProductData.chaiGuruObject(forKey: "p_price")
+        productsCartLists.ItemProductId = dictProductData.chaiGuruObject(forKey: "p_id")
+        productsCartLists.ItemName = dictProductData.chaiGuruObject(forKey: "p_name")
+        productsCartLists.TotalCost = dictProductData.chaiGuruObject(forKey: "p_price")
+        
+        singletonObj.ProductItemCartLists.append(productsCartLists)
         
         productItemsCollectionView.reloadData()
         
@@ -125,19 +149,43 @@ extension TypesOfProductItemsTableViewCell : UICollectionViewDataSource,UICollec
         
         let dictObj = arrOfCollectioViewProductData[indexPath.row] as! NSDictionary
         
-        SingletonClass.sharedInstance.chaiGuruDetailsDict = dictObj
-        
-        
+        singletonObj.chaiGuruDetailsDict = dictObj
         
         
         if delegateObj != nil{
             self.delegateObj.showProductItemDetails()
         }
 
+    }
+    
+    
+    @objc func incrementButtonClicked(_ sender : UIButton){
+    
+        let dictProductData = arrOfCollectioViewProductData[sender.tag] as! NSDictionary
+        
+        let id = dictProductData.chaiGuruObject(forKey: "p_id")
+        
+//        let filteredArray = arrayOfUsers.filter() { $0.userID == "1" }
+//        var filteredArray = arrayOfUsers.filter( { (user: UserDetails) -> Bool in
+//            return user.userID == "1"
+//        })
+      
+        
+        let filterdArray = singletonObj.ProductItemCartLists.filter() { $0.ItemProductId == id }
+        
+        print(filterdArray)
         
         
     }
     
+    @objc func decrementBtnClicked(_ sender : UIButton){
+        
+      //  let dictProductData = arrOfCollectioViewProductData[sender.tag] as! NSDictionary
+        
+        
+        
+        
+    }
     
     
 }

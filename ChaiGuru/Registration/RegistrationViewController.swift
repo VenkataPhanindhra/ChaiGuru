@@ -124,7 +124,7 @@ class RegistrationViewController: UIViewController,UITextFieldDelegate {
         }else{
             termsAndConditions = false
             
-             imgOfTerms.image = UIImage.init(named: "")
+             imgOfTerms.image = UIImage.init(named: "Check_UnSele")
         }
         
         
@@ -176,22 +176,6 @@ class RegistrationViewController: UIViewController,UITextFieldDelegate {
     
     func registrationApiRequest(){
         
-        
-        //FailedResp
-        
-//        {
-//            "status": "Failed",
-//            "user_id": "43",
-//            "msg": "Email is already registered."
-//        }
-        
-        //Success
-        
-//        {
-//            "first_name" = phani407;
-//            status = Success;
-//            "user_id" = 49;
-//        }
         
         let dict = ["first_name" :tfOfName.text!,
                     "last_name":"",
