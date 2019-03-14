@@ -97,7 +97,8 @@ extension TypesOfProductItemsTableViewCell : UICollectionViewDataSource,UICollec
             
         }
         
-        
+        collectionCell.plusBtn.tag = indexPath.row
+        collectionCell.minusBtn.tag = indexPath.row
         collectionCell.plusBtn.addTarget(self, action: #selector(incrementButtonClicked(_:)), for: .touchUpInside)
         collectionCell.minusBtn.addTarget(self, action: #selector(decrementBtnClicked(_:)), for: .touchUpInside)
         
@@ -107,7 +108,22 @@ extension TypesOfProductItemsTableViewCell : UICollectionViewDataSource,UICollec
         if singletonObj.ChaiGuruProductItemLists.contains(dictProductData){
 
             collectionCell.viewOfAdd.isHidden = true
-        
+            let id = dictProductData.chaiGuruObject(forKey: "p_id")
+            
+            
+            for i in 0 ..< singletonObj.ProductItemCartLists.count{
+                
+                let product = singletonObj.ProductItemCartLists[i]
+                
+                if id == product.ItemProductId {
+                   
+                    collectionCell.lblOfTotalItems.text = "\(String(describing: product.NoOfItems!))"
+                   
+                    break
+                }
+                
+            }
+            
         }else{
 
            collectionCell.viewOfAdd.isHidden = false
@@ -165,16 +181,25 @@ extension TypesOfProductItemsTableViewCell : UICollectionViewDataSource,UICollec
         
         let id = dictProductData.chaiGuruObject(forKey: "p_id")
         
-//        let filteredArray = arrayOfUsers.filter() { $0.userID == "1" }
-//        var filteredArray = arrayOfUsers.filter( { (user: UserDetails) -> Bool in
-//            return user.userID == "1"
-//        })
-      
-        
         let filterdArray = singletonObj.ProductItemCartLists.filter() { $0.ItemProductId == id }
         
-        print(filterdArray)
+        if filterdArray.count > 0{
+            
+            var listOfCartProduct = filterdArray[0]
+            listOfCartProduct.NoOfItems += 1
+            
+            let floatValue = Float(listOfCartProduct.ItemEachCost)
+            let totalValue = floatValue! * Float(listOfCartProduct.NoOfItems)
+            
+            listOfCartProduct.TotalCost = String(totalValue)
+            
+            singletonObj.ProductItemCartLists.remove(at: (find(objecToFind: listOfCartProduct.ItemProductId))!)
+            
+            singletonObj.ProductItemCartLists.append(listOfCartProduct)
+            
+        }
         
+        productItemsCollectionView.reloadData()
         
     }
     
@@ -187,5 +212,28 @@ extension TypesOfProductItemsTableViewCell : UICollectionViewDataSource,UICollec
         
     }
     
-    
+    func find(objecToFind: String?) -> Int? {
+        for i in 0 ..< singletonObj.ProductItemCartLists.count {
+          
+            if singletonObj.ProductItemCartLists[i].ItemProductId == objecToFind {
+                return i
+            }
+        }
+        return nil
+    }
 }
+
+
+extension Array where Array.Element: AnyObject {
+    
+    func index(ofElement element: Element) -> Int? {
+        for (currentIndex, currentElement) in self.enumerated() {
+            if currentElement === element {
+                return currentIndex
+            }
+        }
+        return nil
+    }
+}
+
+
