@@ -205,8 +205,41 @@ extension TypesOfProductItemsTableViewCell : UICollectionViewDataSource,UICollec
     
     @objc func decrementBtnClicked(_ sender : UIButton){
         
-      //  let dictProductData = arrOfCollectioViewProductData[sender.tag] as! NSDictionary
+        let dictProductData = arrOfCollectioViewProductData[sender.tag] as! NSDictionary
         
+        let id = dictProductData.chaiGuruObject(forKey: "p_id")
+        
+        let filterdArray = singletonObj.ProductItemCartLists.filter() { $0.ItemProductId == id }
+        
+        if filterdArray.count > 0{
+            
+            var listOfCartProduct = filterdArray[0]
+            listOfCartProduct.NoOfItems -= 1
+            
+            let floatValue = Float(listOfCartProduct.ItemEachCost)
+            let totalValue = floatValue! * Float(listOfCartProduct.NoOfItems)
+            
+            listOfCartProduct.TotalCost = String(totalValue)
+            
+            singletonObj.ProductItemCartLists.remove(at: (find(objecToFind: listOfCartProduct.ItemProductId))!)
+            
+            
+            if listOfCartProduct.NoOfItems == 0{
+                
+               singletonObj.ChaiGuruProductItemLists.remove(dictProductData)
+                
+            }else{
+                singletonObj.ProductItemCartLists.append(listOfCartProduct)
+            }
+            
+            
+            
+        }
+        
+        
+        
+        
+        productItemsCollectionView.reloadData()
         
         
         
