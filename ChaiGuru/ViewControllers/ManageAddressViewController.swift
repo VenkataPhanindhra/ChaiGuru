@@ -20,6 +20,12 @@ class ManageAddressViewController: UIViewController {
     }
     
 
+    @IBAction func backBtnClikced(_ sender : Any){
+        
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    
     /*
     // MARK: - Navigation
 
@@ -42,6 +48,9 @@ extension ManageAddressViewController : UITableViewDelegate,UITableViewDataSourc
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "ManageAddressListTableViewCell", for: indexPath) as! ManageAddressListTableViewCell
+        
+        
+        cell.selectionStyle = .none
         
         return cell
     }
